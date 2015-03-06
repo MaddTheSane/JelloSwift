@@ -28,7 +28,8 @@
 		559F22241AAA4F090067091D /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
 		559F22251AAA4F090067091D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		559F22261AAA4F090067091D /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
-		559F22281AAA5A990067091D /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
+		55AF84301AAA706C0031B099 /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AEC1AAA341C00C03017 /* BodyJoint.swift */; };
+		55AF84311AAA706D0031B099 /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AEC1AAA341C00C03017 /* BodyJoint.swift */; };
 		55BCABE91AAA651E00F6D2E6 /* Jello.h in Headers */ = {isa = PBXBuildFile; fileRef = 55BCABE81AAA651E00F6D2E6 /* Jello.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55BCABFD1AAA658B00F6D2E6 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
 		55BCABFE1AAA658B00F6D2E6 /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
@@ -48,7 +49,6 @@
 		55BCAC0C1AAA658B00F6D2E6 /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
 		55BCAC0D1AAA658B00F6D2E6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		55BCAC0E1AAA658B00F6D2E6 /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
-		55BCAC0F1AAA67C100F6D2E6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		55BCAC1A1AAA693200F6D2E6 /* Jello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BCABE41AAA651E00F6D2E6 /* Jello.framework */; };
 		55BCAC201AAA696300F6D2E6 /* JelloSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95501199329130066F88F /* JelloSwiftTests.swift */; };
 		55BCAC211AAA696300F6D2E6 /* PhysicsMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */; };
@@ -175,6 +175,7 @@
 		55BCAC141AAA693200F6D2E6 /* Jello-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jello-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BCAC171AAA693200F6D2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0414E771A9503ED0031866D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A0510AEC1AAA341C00C03017 /* BodyJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyJoint.swift; sourceTree = "<group>"; };
 		A05ECD5219B1A38C00F84326 /* GravityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityComponent.swift; sourceTree = "<group>"; };
 		A06EC14C199FD49200402D4C /* SpringComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringComponent.swift; sourceTree = "<group>"; };
 		A06EC14E199FD4EE00402D4C /* BodyComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyComponent.swift; sourceTree = "<group>"; };
@@ -310,6 +311,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A0510AEE1AAA342100C03017 /* Joints */ = {
+			isa = PBXGroup;
+			children = (
+				A0510AEC1AAA341C00C03017 /* BodyJoint.swift */,
+			);
+			name = Joints;
+			sourceTree = "<group>";
+		};
 		A06EC14B199FD47E00402D4C /* BodyComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +413,7 @@
 		A0C9550B199329180066F88F /* Jello */ = {
 			isa = PBXGroup;
 			children = (
+				A0510AEE1AAA342100C03017 /* Joints */,
 				A06EC14B199FD47E00402D4C /* BodyComponents */,
 				A0C955311993C3570066F88F /* Structs */,
 				A0C9552E1993BFA50066F88F /* World.swift */,
@@ -686,6 +696,7 @@
 				559F22171AAA4F090067091D /* PressureComponent.swift in Sources */,
 				559F22181AAA4F090067091D /* GravityComponent.swift in Sources */,
 				559F221F1AAA4F090067091D /* World.swift in Sources */,
+				55AF84311AAA706D0031B099 /* BodyJoint.swift in Sources */,
 				559F221D1AAA4F090067091D /* Bitmask.swift in Sources */,
 				559F221C1AAA4F090067091D /* Vector3.swift in Sources */,
 				559F22151AAA4F090067091D /* BodyComponent.swift in Sources */,
@@ -711,6 +722,7 @@
 				55BCABFF1AAA658B00F6D2E6 /* PressureComponent.swift in Sources */,
 				55BCAC001AAA658B00F6D2E6 /* GravityComponent.swift in Sources */,
 				55BCAC071AAA658B00F6D2E6 /* World.swift in Sources */,
+				55AF84301AAA706C0031B099 /* BodyJoint.swift in Sources */,
 				55BCAC051AAA658B00F6D2E6 /* Bitmask.swift in Sources */,
 				55BCAC041AAA658B00F6D2E6 /* Vector3.swift in Sources */,
 				55BCABFD1AAA658B00F6D2E6 /* BodyComponent.swift in Sources */,
@@ -1171,6 +1183,7 @@
 				55BCABF91AAA651E00F6D2E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55BCAC1D1AAA693200F6D2E6 /* Build configuration list for PBXNativeTarget "Jello-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -1179,6 +1192,7 @@
 				55BCAC1F1AAA693200F6D2E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A09CC4B11A251A880073BB62 /* Build configuration list for PBXNativeTarget "JelloSwiftStressTest" */ = {
 			isa = XCConfigurationList;
