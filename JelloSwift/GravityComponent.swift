@@ -25,7 +25,7 @@ class GravityComponent: BodyComponent
         }
         */
         
-        for var i = 0; i < body.pointMasses.count; i++
+        for i in 0 ..< body.pointMasses.count
         {
             body.pointMasses[i].applyForce(gravity * body.pointMasses[i].mass);
         }

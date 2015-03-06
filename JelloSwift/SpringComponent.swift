@@ -120,10 +120,8 @@ class SpringComponent: BodyComponent
         
         var force = Vector2();
         
-        for var i = 0; i < springs.count; i++
+        for s in springs
         {
-            let s = springs[i];
-            
             let p1 = s.pointMassA;
             let p2 = s.pointMassB;
             
@@ -137,11 +135,8 @@ class SpringComponent: BodyComponent
         {
             body.baseShape.transformVertices(&body.globalShape, worldPos: body.derivedPos, angleInRadians: body.derivedAngle, localScale: body.scale);
             
-            let c = body.pointMasses.count;
-            for var i = 0; i < c; i++
+            for (i, p) in enumerate(body.pointMasses)
             {
-                let p = body.pointMasses[i];
-                
                 if(!body.isKinematic)
                 {
                     force = calculateSpringForce(p.position, p.velocity, body.globalShape[i], p.velocity, 0.0, shapeSpringK, shapeSpringDamp);

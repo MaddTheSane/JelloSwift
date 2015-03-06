@@ -31,7 +31,7 @@ func polygonArea(points: [PointMass]) -> CGFloat
 {
     var area: CGFloat = 0;
     let c = points.count;
-    var v2 = points[c - 1].position;
+    var v2 = points.last!.position;
     
     for var i = 0; i < c; i++
     {

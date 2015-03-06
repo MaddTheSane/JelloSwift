@@ -36,11 +36,9 @@ class PressureComponent: BodyComponent
         let c = body.pointMasses.count;
         var prev = c - 1;
         
-        for var i = 0; i < c; i++
+        for (i, curPoint) in enumerate(body.pointMasses)
         {
-            let curPoint:PointMass = body.pointMasses[i];
-            
-            let next: Int = (i + 1) % (c);
+            let next = (i + 1) % (c);
             
             // currently we are talking about the edge from i --> j.
             // first calculate the volume of the body, and cache normals as we go.
@@ -57,12 +55,12 @@ class PressureComponent: BodyComponent
         volume = max(0.5, polygonArea(body.pointMasses));
         
         // now loop through, adding forces!
-        let invVolume: CGFloat = 1 / volume;
+        let invVolume = 1 / volume;
         
-        for var i = 0; i < c; i++
+        for (i, edgeLength) in enumerate(edgeLengthList)
         {
-            let j: Int = (i + 1) % c;
-            let pressureV: CGFloat = (invVolume * edgeLengthList[i] * (gasAmmount));
+            let j = (i + 1) % c;
+            let pressureV = (invVolume * edgeLength * (gasAmmount));
             
             body.pointMasses[i].force += normalList[i] * pressureV;
             body.pointMasses[j].force += normalList[j] * pressureV;

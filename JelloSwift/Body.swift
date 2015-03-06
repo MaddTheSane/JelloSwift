@@ -412,10 +412,8 @@ class Body: Equatable
     func applyTorque(force: CGFloat)
     {
         // Accelerate the body
-        for var i = 0; i < pointMasses.count; i++
+        for pm in pointMasses
         {
-            var pm:PointMass = pointMasses[i];
-            
             var diff = (pm.position - derivedPos).normalized().perpendicular();
             
             pm.applyForce(diff * force);
@@ -426,10 +424,8 @@ class Body: Equatable
     func setAngularVelocity(vel: CGFloat)
     {
         // Accelerate the body
-        for var i = 0; i < pointMasses.count; i++
+		for pm in pointMasses
         {
-            let pm:PointMass = pointMasses[i];
-            
             var diff = (pm.position - derivedPos).normalized().perpendicular();
             
             pm.velocity = diff * vel;
@@ -440,10 +436,8 @@ class Body: Equatable
     func addAngularVelocity(vel: CGFloat)
     {
         // Accelerate the body
-        for var i = 0; i < pointMasses.count; i++
+		for pm in pointMasses
         {
-            let pm:PointMass = pointMasses[i];
-            
             var diff = (pm.position - derivedPos).normalized().perpendicular();
             
             pm.velocity += diff * vel;

@@ -18,14 +18,14 @@ struct MaterialPair
     // The relative friction between the two bodies
     var friction: CGFloat = 1.0;
     // A function to call and utilize as a collision filter when figuring out whether the two bodies should collide
-    var collisionFilter: (Body, Int, Body, Int, Int, Vector2, CGFloat) -> (Bool);
+    var collisionFilter: (Body, Int, Body, Int, Int, Vector2, CGFloat) -> Bool;
     
     init()
     {
-        self.collide = true;
-        self.friction = 0.3;
-        self.elasticity = 0.2;
-        self.collisionFilter = defaultCollisionFilter;
+        collide = true;
+        friction = 0.3;
+        elasticity = 0.2;
+        collisionFilter = defaultCollisionFilter;
     }
 }
 

@@ -65,9 +65,9 @@ class ClosedShape
         let count = localVertices.count;
         var ret: [Vector2] = [Vector2](count: count, repeatedValue: Vector2());
         
-        for var i = 0; i < count; i++
+        for (i, lv) in enumerate(localVertices)
         {
-            ret[i] = rotateVector(localVertices[i] * localScale, angleInRadians) + worldPos;
+            ret[i] = rotateVector(lv * localScale, angleInRadians) + worldPos;
         }
         
         return ret;
@@ -79,9 +79,9 @@ class ClosedShape
     func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1))
     {
         let count = localVertices.count;
-        for var i = 0; i < count; i++
+		for (i, lv) in enumerate(localVertices)
         {
-            target[i] = rotateVector(localVertices[i] * localScale, angleInRadians) + worldPos;
+            target[i] = rotateVector(lv * localScale, angleInRadians) + worldPos;
         }
     }
 }

@@ -97,7 +97,7 @@ class PolyDrawer
                 p[i] = poly.points[i % poly.points.count];
             }
             
-            CGPathAddLines(path, transform, p, UInt(poly.points.count + 1))
+            CGPathAddLines(path, transform, p, poly.points.count + 1)
             
             p.dealloc(poly.points.count + 1);
             
@@ -165,10 +165,8 @@ class PolyDrawer
     /// Renders the contents of this PolyDrawer on a given CGContextRef
     func renderOnContext(context: CGContextRef)
     {
-        for pi in 0..<polys.count //poly in polys
+        for poly in polys //poly in polys
         {
-            let poly = polys[pi];
-            
             let p = UnsafeMutablePointer<CGPoint>.alloc(poly.points.count + 1);
             
             for i in 0..<poly.points.count + 1
@@ -180,7 +178,7 @@ class PolyDrawer
             let transform = UnsafeMutablePointer<CGAffineTransform>.alloc(1);
             transform[0] = CGAffineTransformIdentity;
             
-            CGPathAddLines(path, transform, p, UInt(poly.points.count + 1))
+            CGPathAddLines(path, transform, p, poly.points.count + 1)
             
             p.dealloc(poly.points.count + 1);
             

@@ -342,7 +342,7 @@ func /=(inout lhs: Vector2, rhs: CGFloat)
     lhs = lhs / rhs;
 }
 
-// CGFloat interaction
+// Int interaction
 func +=(inout lhs: Vector2, rhs: Int)
 {
     lhs = lhs + rhs;
