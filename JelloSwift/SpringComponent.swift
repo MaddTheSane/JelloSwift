@@ -91,13 +91,13 @@ public class SpringComponent: BodyComponent
     /// Sets the spring constant for the given spring index.
     /// The spring index starts from pointMasses.count and onwards, so the first spring
     /// will not be the first edge spring.
-    func setSpringConstants(springID: Int, _ springK: CGFloat, _ springDamp: CGFloat)
+    func setSpringConstants(aSpring: (ID: Int, springK: CGFloat, damp: CGFloat))
     {
         // index is for all internal springs, AFTER the default internal springs.
-        var index = body.pointMasses.count + springID;
+        var index = body.pointMasses.count + aSpring.ID;
         
-        springs[index].springK = springK;
-        springs[index].damping = springDamp;
+        springs[index].springK = aSpring.springK;
+        springs[index].damping = aSpring.damp;
     }
     
     /// Gets the spring constant of a spring at the specified index.

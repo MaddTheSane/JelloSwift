@@ -9,7 +9,7 @@
 import UIKit
 
 // Represents a Pressure component that can be added to a body to include gas pressure as an internal force
-class PressureComponent: BodyComponent
+public class PressureComponent: BodyComponent
 {
     // PRIVATE VARIABLES
     var volume: CGFloat = 0;
@@ -17,13 +17,13 @@ class PressureComponent: BodyComponent
     var normalList: [Vector2] = [];
     var edgeLengthList: [CGFloat] = [];
     
-    override func prepare(body: Body)
+    public override func prepare(body: Body)
     {
         normalList = [Vector2](count: body.pointMasses.count, repeatedValue: Vector2());
         edgeLengthList = [CGFloat](count: body.pointMasses.count, repeatedValue: 0);
     }
     
-    override func accumulateInternalForces()
+    public override func accumulateInternalForces()
     {
         super.accumulateInternalForces();
         // internal forces based on pressure equations.  we need 2 loops to do this.  one to find the overall volume of the

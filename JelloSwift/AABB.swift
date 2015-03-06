@@ -12,11 +12,11 @@ import UIKit
 public class AABB
 {
     /// The validity of this AABB
-    public var validity = PointValidity.Invalid;
+    private(set) public var validity = PointValidity.Invalid;
     
     /// Minimum and maximum points for this bounding box
-    public var minimum = Vector2();
-    public var maximum = Vector2();
+    private(set) public var minimum = Vector2();
+    private(set) public var maximum = Vector2();
     
     /// Gets the X position of this AABB
     public var x: CGFloat { return minimum.X; }

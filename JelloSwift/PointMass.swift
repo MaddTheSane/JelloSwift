@@ -14,7 +14,7 @@ public class PointMass
     /// The mass of this point mass.
     /// Leave this value always >0 to maintain consistency on the simulation, unless
     /// the point is supposed to fixed
-    var mass: CGFloat = 1;
+    internal(set) public var mass: CGFloat = 1;
     
     /// The spatial information for the point mass
     public var position: Vector2 = Vector2();

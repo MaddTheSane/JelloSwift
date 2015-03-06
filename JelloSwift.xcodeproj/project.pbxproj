@@ -251,6 +251,7 @@
 				A0C954E6199329130066F88F /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A0C954E6199329130066F88F /* Products */ = {
 			isa = PBXGroup;
@@ -872,6 +873,7 @@
 				559F22101AAA4E9E0067091D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A09CC4B11A251A880073BB62 /* Build configuration list for PBXNativeTarget "JelloSwiftStressTest" */ = {
 			isa = XCConfigurationList;

@@ -59,13 +59,13 @@ public class World
         let min = Vector2(-20.0, -20.0);
         let max = Vector2( 20.0,  20.0);
         
-        setWorldLimits(min, max);
+        setWorldLimits(min: min, max: max);
     
         penetrationThreshold = 0.3;
     }
     
     /// WORLD SIZE
-    func setWorldLimits(min: Vector2, _ max: Vector2)
+	public func setWorldLimits(#min: Vector2, max: Vector2)
     {
         worldLimits = AABB(min: min, max: max);
         
@@ -225,7 +225,7 @@ public class World
     }
     
     /// Casts a ray between the given points and returns the first body it comes in contact with
-    func rayCast(start: Vector2, end: Vector2, inout _ retPt:Vector2, bit: Bitmask, _ ignoreList:[Body] = []) -> Body?
+    func rayCast(start: Vector2, end: Vector2, inout _ retPt:Vector2, bit: Bitmask, ignoreList:[Body] = []) -> Body?
     {
         var closestD = start.distanceTo(end);
         var closestB:Body? = nil;
