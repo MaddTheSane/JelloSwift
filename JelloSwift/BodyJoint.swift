@@ -12,9 +12,9 @@ import Foundation
 protocol BodyJoint
 {
     /// Gets the first body being united by this joint
-    var Body1 { get; }
+    var Body1: AnyObject { get }
     /// Gets the second body being united by this joint
-    var Body2 { get; }
+    var Body2: AnyObject { get }
     
     
     /**

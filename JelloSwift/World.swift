@@ -286,10 +286,8 @@ public class World
         }
         
         let c = bodies.count;
-        for i in 0..<c
+        for (i, body1) in enumerate(bodies)
         {
-            let body1 = bodies[i];
-            
             for j in (i+1)..<c
             {
                 let body2 = bodies[j];
