@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 /// Represents a 2D vector
 public struct Vector2: Comparable, Printable

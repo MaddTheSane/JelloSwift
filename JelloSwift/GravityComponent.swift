@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 /// Represents a Gravity component that can be added to a body to make it constantly affected by gravity
 public class GravityComponent: BodyComponent

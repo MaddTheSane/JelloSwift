@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 /// Represents a Spring component that can be added to a body to include spring-based physics in the body's point masses
 public class SpringComponent: BodyComponent

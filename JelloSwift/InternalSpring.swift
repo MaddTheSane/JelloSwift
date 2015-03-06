@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 /// Represents an internal spring inside a soft body object, and keeps points close together
 public class InternalSpring

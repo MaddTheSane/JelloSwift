@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 /// Represents a simulation world, containing soft bodies and the code utilized to make them interact with each other
 public class World

@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 // Represents a Pressure component that can be added to a body to include gas pressure as an internal force
 public class PressureComponent: BodyComponent

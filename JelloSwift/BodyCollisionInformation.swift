@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+import Foundation
 
 // Encapsulates information about a collision between two soft bodies
 struct BodyCollisionInformation: Equatable

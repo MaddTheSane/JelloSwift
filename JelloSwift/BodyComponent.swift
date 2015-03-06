@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // Represents a component that can be added to a body to change it's physical characteristics
 public class BodyComponent: Equatable
