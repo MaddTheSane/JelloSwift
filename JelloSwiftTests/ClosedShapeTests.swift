@@ -6,7 +6,12 @@
 //  Copyright (c) 2015 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+    import UIKit
+    #elseif os(OSX)
+    import Cocoa
+#endif
+import Jello
 import XCTest
 
 class ClosedShapeTests: XCTestCase

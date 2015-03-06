@@ -34,7 +34,7 @@ public class AABB
         
     }
     
-    init(min: Vector2?, max: Vector2?)
+    public init(min: Vector2?, max: Vector2?)
     {
         self.validity = PointValidity.Valid;
         
@@ -109,7 +109,7 @@ public class AABB
         }
     }
     
-    func contains(point: Vector2) -> Bool
+    public func contains(point: Vector2) -> Bool
     {
         if(self.validity == PointValidity.Invalid)
         {
@@ -119,7 +119,7 @@ public class AABB
         return point >= minimum && point <= maximum;
     }
     
-    func intersects(box: AABB) -> Bool
+    public func intersects(box: AABB) -> Bool
     {
         return self.minimum <= box.maximum && self.maximum >= box.minimum;
     }

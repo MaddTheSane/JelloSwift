@@ -6,7 +6,12 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+    import UIKit
+    #elseif os(OSX)
+    import Cocoa
+#endif
+import Jello
 import XCTest
 
 class JelloSwiftTests: XCTestCase

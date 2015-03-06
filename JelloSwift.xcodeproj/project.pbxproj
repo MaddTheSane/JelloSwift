@@ -49,6 +49,11 @@
 		55BCAC0D1AAA658B00F6D2E6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		55BCAC0E1AAA658B00F6D2E6 /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		55BCAC0F1AAA67C100F6D2E6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
+		55BCAC1A1AAA693200F6D2E6 /* Jello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BCABE41AAA651E00F6D2E6 /* Jello.framework */; };
+		55BCAC201AAA696300F6D2E6 /* JelloSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95501199329130066F88F /* JelloSwiftTests.swift */; };
+		55BCAC211AAA696300F6D2E6 /* PhysicsMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */; };
+		55BCAC221AAA696300F6D2E6 /* PointMassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D54701997E4EE003C9669 /* PointMassTests.swift */; };
+		55BCAC231AAA696300F6D2E6 /* ClosedShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */; };
 		A0414E781A9503ED0031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
 		A0414E791A9508850031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
 		A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
@@ -114,6 +119,13 @@
 			remoteGlobalIDString = 559F21F41AAA4E9D0067091D;
 			remoteInfo = Jello;
 		};
+		55BCAC1B1AAA693200F6D2E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0C954DD199329130066F88F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55BCABE31AAA651E00F6D2E6;
+			remoteInfo = "Jello-OSX";
+		};
 		A0C954FC199329130066F88F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C954DD199329130066F88F /* Project object */;
@@ -158,6 +170,8 @@
 		55BCABE41AAA651E00F6D2E6 /* Jello.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jello.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BCABE71AAA651E00F6D2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55BCABE81AAA651E00F6D2E6 /* Jello.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Jello.h; sourceTree = "<group>"; };
+		55BCAC141AAA693200F6D2E6 /* Jello-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jello-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BCAC171AAA693200F6D2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0414E771A9503ED0031866D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A05ECD5219B1A38C00F84326 /* GravityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityComponent.swift; sourceTree = "<group>"; };
 		A06EC14C199FD49200402D4C /* SpringComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringComponent.swift; sourceTree = "<group>"; };
@@ -208,6 +222,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55BCAC111AAA693200F6D2E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BCAC1A1AAA693200F6D2E6 /* Jello.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +292,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		55BCAC151AAA693200F6D2E6 /* Jello-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				55BCAC161AAA693200F6D2E6 /* Supporting Files */,
+			);
+			path = "Jello-OSXTests";
+			sourceTree = "<group>";
+		};
+		55BCAC161AAA693200F6D2E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55BCAC171AAA693200F6D2E6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A06EC14B199FD47E00402D4C /* BodyComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +334,7 @@
 				A0C954FE199329130066F88F /* JelloSwiftTests */,
 				559F21F61AAA4E9D0067091D /* Jello */,
 				55BCABE51AAA651E00F6D2E6 /* Jello-OSX */,
+				55BCAC151AAA693200F6D2E6 /* Jello-OSXTests */,
 				A0C954E6199329130066F88F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -309,6 +348,7 @@
 				A09CC4B41A251A880073BB62 /* JelloSwift.app */,
 				559F21F51AAA4E9D0067091D /* Jello.framework */,
 				55BCABE41AAA651E00F6D2E6 /* Jello.framework */,
+				55BCAC141AAA693200F6D2E6 /* Jello-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -447,6 +487,24 @@
 			productReference = 55BCABE41AAA651E00F6D2E6 /* Jello.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		55BCAC131AAA693200F6D2E6 /* Jello-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55BCAC1D1AAA693200F6D2E6 /* Build configuration list for PBXNativeTarget "Jello-OSXTests" */;
+			buildPhases = (
+				55BCAC101AAA693200F6D2E6 /* Sources */,
+				55BCAC111AAA693200F6D2E6 /* Frameworks */,
+				55BCAC121AAA693200F6D2E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55BCAC1C1AAA693200F6D2E6 /* PBXTargetDependency */,
+			);
+			name = "Jello-OSXTests";
+			productName = "Jello-OSXTests";
+			productReference = 55BCAC141AAA693200F6D2E6 /* Jello-OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A09CC4941A251A880073BB62 /* JelloSwiftStressTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A09CC4B11A251A880073BB62 /* Build configuration list for PBXNativeTarget "JelloSwiftStressTest" */;
@@ -519,6 +577,9 @@
 					55BCABE31AAA651E00F6D2E6 = {
 						CreatedOnToolsVersion = 6.3;
 					};
+					55BCAC131AAA693200F6D2E6 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					A0C954E4199329130066F88F = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 2E2NEW4A56;
@@ -547,6 +608,7 @@
 				A0C954FA199329130066F88F /* JelloSwiftTests */,
 				559F21F41AAA4E9D0067091D /* Jello */,
 				55BCABE31AAA651E00F6D2E6 /* Jello-OSX */,
+				55BCAC131AAA693200F6D2E6 /* Jello-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -560,6 +622,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		55BCABE21AAA651E00F6D2E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55BCAC121AAA693200F6D2E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -646,6 +715,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55BCAC101AAA693200F6D2E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BCAC201AAA696300F6D2E6 /* JelloSwiftTests.swift in Sources */,
+				55BCAC221AAA696300F6D2E6 /* PointMassTests.swift in Sources */,
+				55BCAC211AAA696300F6D2E6 /* PhysicsMathTest.swift in Sources */,
+				55BCAC231AAA696300F6D2E6 /* ClosedShapeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A09CC4951A251A880073BB62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -725,6 +805,11 @@
 			isa = PBXTargetDependency;
 			target = 559F21F41AAA4E9D0067091D /* Jello */;
 			targetProxy = 559F220A1AAA4E9E0067091D /* PBXContainerItemProxy */;
+		};
+		55BCAC1C1AAA693200F6D2E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55BCABE31AAA651E00F6D2E6 /* Jello-OSX */;
+			targetProxy = 55BCAC1B1AAA693200F6D2E6 /* PBXContainerItemProxy */;
 		};
 		A0C954FD199329130066F88F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -844,6 +929,47 @@
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		55BCAC1E1AAA693200F6D2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Jello-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		55BCAC1F1AAA693200F6D2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Jello-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1041,6 +1167,14 @@
 			buildConfigurations = (
 				55BCABF81AAA651E00F6D2E6 /* Debug */,
 				55BCABF91AAA651E00F6D2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55BCAC1D1AAA693200F6D2E6 /* Build configuration list for PBXNativeTarget "Jello-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55BCAC1E1AAA693200F6D2E6 /* Debug */,
+				55BCAC1F1AAA693200F6D2E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

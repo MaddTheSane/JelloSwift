@@ -12,7 +12,7 @@ import Foundation
 // Contains a set of points that is equivalent as the internal shape of a sofy body
 public class ClosedShape
 {
-    var localVertices: [Vector2] = [];
+    public var localVertices: [Vector2] = [];
     
     /// Start adding vertices to this closed shape.
     /// Calling this method will erase any existing verts

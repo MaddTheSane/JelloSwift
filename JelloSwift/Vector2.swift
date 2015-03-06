@@ -170,7 +170,7 @@ public func max(a: Vector2, b: Vector2) -> Vector2
 }
 
 /// Rotates a given vector by an angle in radians
-func rotateVector(vec: Vector2, angleInRadians: CGFloat) -> Vector2
+public func rotateVector(vec: Vector2, angleInRadians: CGFloat) -> Vector2
 {
     if(angleInRadians % (PI * 2) == 0)
     {
@@ -189,13 +189,13 @@ func rotateVector(vec: Vector2, angleInRadians: CGFloat) -> Vector2
 }
 
 /// Returns whether rotating from A to B is counter-clockwise
-func vectorsAreCCW(A: Vector2, B: Vector2) -> Bool
+public func vectorsAreCCW(A: Vector2, B: Vector2) -> Bool
 {
     return (B =* A.perpendicular()) >= 0.0;
 }
 
 /// Averages a list of vectors into one Vector2 point
-func averageVectors(vectors: [Vector2]) -> Vector2
+public func averageVectors(vectors: [Vector2]) -> Vector2
 {
     return (vectors.reduce(vectors[0], combine: +) / vectors.count).normalized();
 }
