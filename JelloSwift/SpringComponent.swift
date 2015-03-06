@@ -9,7 +9,7 @@
 import UIKit
 
 /// Represents a Spring component that can be added to a body to include spring-based physics in the body's point masses
-class SpringComponent: BodyComponent
+public class SpringComponent: BodyComponent
 {
     /// Gets the count of springs on this spring component
     var springCount: Int { return springs.count; }
@@ -30,13 +30,13 @@ class SpringComponent: BodyComponent
     /// The spring dampness for the shape matching of the body - ignored if the shape matching is off
     private var shapeSpringDamp: CGFloat = 10;
     
-    override func prepare(body: Body)
+    public override func prepare(body: Body)
     {
         self._buildDefaultSprings();
     }
     
     /// Adds an internal spring to this body
-    func addInternalSpring(pointA: Int, pointB: Int, springK: CGFloat, damping: CGFloat, dist: CGFloat = -1) -> InternalSpring
+    public func addInternalSpring(pointA: Int, pointB: Int, springK: CGFloat, damping: CGFloat, dist: CGFloat = -1) -> InternalSpring
     {
         var d = dist;
         
@@ -114,7 +114,7 @@ class SpringComponent: BodyComponent
         return springs[body.pointMasses.count + springID].springD;
     }
     
-    override func accumulateInternalForces()
+    public override func accumulateInternalForces()
     {
         super.accumulateInternalForces();
         
@@ -153,26 +153,26 @@ class SpringComponent: BodyComponent
 }
 
 /// Creator for the Spring component
-class SpringComponentCreator : BodyComponentCreator
+public class SpringComponentCreator : BodyComponentCreator
 {
     /// Whether the shape matching is on - turning on shape matching will make the soft body try to mantain its original
     /// shape as specified by its baseShape
-    var shapeMatchingOn = true;
+    public var shapeMatchingOn = true;
     
     /// The spring constant for the edges of the spring body
-    var edgeSpringK: CGFloat = 50;
+    public var edgeSpringK: CGFloat = 50;
     /// The spring dampness for the edges of the spring body
-    var edgeSpringDamp: CGFloat = 2;
+    public var edgeSpringDamp: CGFloat = 2;
     
     /// The spring constant for the shape matching of the body - ignored if shape matching is off
-    var shapeSpringK: CGFloat = 200;
+    public var shapeSpringK: CGFloat = 200;
     /// The spring dampness for the shape matching of the body - ignored if the shape matching is off
-    var shapeSpringDamp: CGFloat = 10;
+    public var shapeSpringDamp: CGFloat = 10;
     
     /// An array of inner springs for a body
-    var innerSprings: [SpringComponentInnerSpring] = [];
+    public var innerSprings: [SpringComponentInnerSpring] = [];
     
-    required init(shapeMatchingOn: Bool = true, edgeSpringK: CGFloat = 50, edgeSpringDamp: CGFloat = 2, shapeSpringK: CGFloat = 200, shapeSpringDamp: CGFloat = 10, innerSprings: [SpringComponentInnerSpring] = [])
+    required public init(shapeMatchingOn: Bool = true, edgeSpringK: CGFloat = 50, edgeSpringDamp: CGFloat = 2, shapeSpringK: CGFloat = 200, shapeSpringDamp: CGFloat = 10, innerSprings: [SpringComponentInnerSpring] = [])
     {
         self.shapeMatchingOn = shapeMatchingOn;
         
@@ -189,7 +189,7 @@ class SpringComponentCreator : BodyComponentCreator
         self.bodyComponentClass = SpringComponent.self;
     }
     
-    override func prepareBodyAfterComponent(body: Body)
+    public override func prepareBodyAfterComponent(body: Body)
     {
         if let comp = body.getComponentType(SpringComponent)
         {
@@ -206,7 +206,7 @@ class SpringComponentCreator : BodyComponentCreator
 }
 
 /// Specifies a template for an inner spring
-struct SpringComponentInnerSpring
+public struct SpringComponentInnerSpring
 {
     var indexA: Int = 0;
     var indexB: Int = 0;
@@ -216,7 +216,7 @@ struct SpringComponentInnerSpring
     
     var dist: CGFloat = 0;
     
-    init(a: Int, b: Int, springK: CGFloat, springD: CGFloat, dist: CGFloat = -1)
+    public init(a: Int, b: Int, springK: CGFloat, springD: CGFloat, dist: CGFloat = -1)
     {
         indexA = a;
         indexB = b;

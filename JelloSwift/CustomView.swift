@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import Jello
 
 class CustomView: SKView
 {

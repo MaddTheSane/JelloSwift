@@ -9,25 +9,30 @@
 import UIKit
 
 // Contains a set of points that is equivalent as the internal shape of a sofy body
-class ClosedShape
+public class ClosedShape
 {
     var localVertices: [Vector2] = [];
     
-    // Start adding vertices to this closed shape.
-    // Calling this method will erase any existing verts
-    func begin()
+    /// Start adding vertices to this closed shape.
+    /// Calling this method will erase any existing verts
+    public func begin()
     {
         localVertices = [];
     }
-    
-    // Adds a vertex to this closed shape
-    func addVertex(vertex: Vector2)
+	
+	/// Default initializer
+	public init() {
+		
+	}
+	
+    /// Adds a vertex to this closed shape
+    public func addVertex(vertex: Vector2)
     {
         localVertices += vertex;
     }
     
-    // Finishes constructing this closed shape, and convert them to local space (by default)
-    func finish(recenter: Bool = true)
+    /// Finishes constructing this closed shape, and convert them to local space (by default)
+    public func finish(recenter: Bool = true)
     {
         if(recenter)
         {
@@ -49,8 +54,8 @@ class ClosedShape
         }
     }
     
-    // Transforms all vertices by the given angle and scale
-    func transformOwn(angleInRadians: CGFloat, localScale: Vector2)
+    /// Transforms all vertices by the given angle and scale
+    public func transformOwn(angleInRadians: CGFloat, localScale: Vector2)
     {
         for i in 0..<localVertices.count
         {
@@ -60,7 +65,7 @@ class ClosedShape
     
     /// Gets a new list of vertices, transformed by the given position, angle, and scale.
     /// transformation is applied in the following order:  scale -> rotation -> position.
-    func transformVertices(worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1)) -> [Vector2]
+    public func transformVertices(worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1)) -> [Vector2]
     {
         let count = localVertices.count;
         var ret: [Vector2] = [Vector2](count: count, repeatedValue: Vector2());
@@ -76,7 +81,7 @@ class ClosedShape
     /// Transforms the points on this closed shape into the given array of points.
     /// The array of points must have the same count of vertices as this closed shape
     /// transformation is applied in the following order:  scale -> rotation -> position.
-    func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1))
+    public func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1))
     {
         let count = localVertices.count;
 		for (i, lv) in enumerate(localVertices)

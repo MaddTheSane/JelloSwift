@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import Jello
 
 /// Enum used to modify the input mode of the test simulation
 enum InputMode: Int

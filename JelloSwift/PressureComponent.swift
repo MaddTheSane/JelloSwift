@@ -69,11 +69,11 @@ class PressureComponent: BodyComponent
 }
 
 // Creator for the Spring component
-class PressureComponentCreator : BodyComponentCreator
+public class PressureComponentCreator : BodyComponentCreator
 {
-    var gasAmmount: CGFloat;
+    public var gasAmmount: CGFloat;
     
-    required init(gasAmmount: CGFloat = 0)
+    public required init(gasAmmount: CGFloat = 0)
     {
         self.gasAmmount = gasAmmount;
         
@@ -82,7 +82,7 @@ class PressureComponentCreator : BodyComponentCreator
         self.bodyComponentClass = PressureComponent.self;
     }
     
-    override func prepareBodyAfterComponent(body: Body)
+    public override func prepareBodyAfterComponent(body: Body)
     {
         if let comp = body.getComponentType(PressureComponent)
         {

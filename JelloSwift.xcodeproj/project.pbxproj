@@ -7,18 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		559F21FA1AAA4E9D0067091D /* Jello.h in Headers */ = {isa = PBXBuildFile; fileRef = 559F21F91AAA4E9D0067091D /* Jello.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		559F220C1AAA4E9E0067091D /* Jello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; };
+		559F220D1AAA4E9E0067091D /* Jello.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		559F22151AAA4F090067091D /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
+		559F22161AAA4F090067091D /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
+		559F22171AAA4F090067091D /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
+		559F22181AAA4F090067091D /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
+		559F22191AAA4F090067091D /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
+		559F221A1AAA4F090067091D /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
+		559F221B1AAA4F090067091D /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550C199329280066F88F /* Vector2.swift */; };
+		559F221C1AAA4F090067091D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
+		559F221D1AAA4F090067091D /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
+		559F221E1AAA4F090067091D /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
+		559F221F1AAA4F090067091D /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
+		559F22201AAA4F090067091D /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
+		559F22211AAA4F090067091D /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
+		559F22221AAA4F090067091D /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
+		559F22231AAA4F090067091D /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
+		559F22241AAA4F090067091D /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
+		559F22251AAA4F090067091D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
+		559F22261AAA4F090067091D /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
+		559F22281AAA5A990067091D /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
 		A0414E781A9503ED0031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
 		A0414E791A9508850031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
-		A05ECD5319B1A38C00F84326 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
 		A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
 		A05ECD5519B1A6D700F84326 /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
 		A05ECD5619B1A6D700F84326 /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A05ECD5719B1A6D700F84326 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
-		A06EC14D199FD49200402D4C /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
-		A06EC14F199FD4EE00402D4C /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
-		A06EC151199FDB2300402D4C /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A07D54711997E4EE003C9669 /* PointMassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D54701997E4EE003C9669 /* PointMassTests.swift */; };
-		A081CFE21996B04D00C7CA49 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
 		A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */; };
 		A09CC4961A251A880073BB62 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EE199329130066F88F /* GameScene.swift */; };
 		A09CC4971A251A880073BB62 /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
@@ -52,38 +69,31 @@
 		A0C954F4199329130066F88F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F2199329130066F88F /* Main.storyboard */; };
 		A0C954F6199329130066F88F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
 		A0C95502199329130066F88F /* JelloSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95501199329130066F88F /* JelloSwiftTests.swift */; };
-		A0C9550D199329280066F88F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550C199329280066F88F /* Vector2.swift */; };
-		A0C9550F199333D30066F88F /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
-		A0C95511199336460066F88F /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
 		A0C9551619933ADA0066F88F /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
 		A0C9551719933ADA0066F88F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550C199329280066F88F /* Vector2.swift */; };
 		A0C9551819933ADA0066F88F /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
-		A0C9551A19933D9B0066F88F /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
 		A0C9551B199340060066F88F /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
-		A0C9551D199340BD0066F88F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
 		A0C9551E199340BD0066F88F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
-		A0C95520199342D10066F88F /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
 		A0C95521199342D10066F88F /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
-		A0C95523199343DF0066F88F /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
 		A0C95524199343DF0066F88F /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
-		A0C95526199344390066F88F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		A0C95527199344390066F88F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
-		A0C955291993BB360066F88F /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
 		A0C9552A1993BB360066F88F /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
-		A0C9552C1993BC150066F88F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
 		A0C9552D1993BC150066F88F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
-		A0C9552F1993BFA50066F88F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
 		A0C955301993BFA50066F88F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
-		A0C955331993C37C0066F88F /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
 		A0C955341993C37C0066F88F /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
-		A0C9553619946BA00066F88F /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
 		A0C9553719946BA00066F88F /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
-		A0C9553D1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		A0C9553E1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		559F220A1AAA4E9E0067091D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0C954DD199329130066F88F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 559F21F41AAA4E9D0067091D;
+			remoteInfo = Jello;
+		};
 		A0C954FC199329130066F88F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C954DD199329130066F88F /* Project object */;
@@ -107,7 +117,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		559F22111AAA4E9E0067091D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				559F220D1AAA4E9E0067091D /* Jello.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		559F21F51AAA4E9D0067091D /* Jello.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Jello.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		559F21F81AAA4E9D0067091D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		559F21F91AAA4E9D0067091D /* Jello.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Jello.h; sourceTree = "<group>"; };
 		A0414E771A9503ED0031866D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A05ECD5219B1A38C00F84326 /* GravityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityComponent.swift; sourceTree = "<group>"; };
 		A06EC14C199FD49200402D4C /* SpringComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringComponent.swift; sourceTree = "<group>"; };
@@ -147,6 +174,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		559F21F11AAA4E9D0067091D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A09CC4AC1A251A880073BB62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559F220C1AAA4E9E0067091D /* Jello.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +206,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		559F21F61AAA4E9D0067091D /* Jello */ = {
+			isa = PBXGroup;
+			children = (
+				559F21F91AAA4E9D0067091D /* Jello.h */,
+				559F21F71AAA4E9D0067091D /* Supporting Files */,
+			);
+			path = Jello;
+			sourceTree = "<group>";
+		};
+		559F21F71AAA4E9D0067091D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				559F21F81AAA4E9D0067091D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A06EC14B199FD47E00402D4C /* BodyComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +247,7 @@
 			children = (
 				A0C954E7199329130066F88F /* JelloSwift */,
 				A0C954FE199329130066F88F /* JelloSwiftTests */,
+				559F21F61AAA4E9D0067091D /* Jello */,
 				A0C954E6199329130066F88F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,6 +258,7 @@
 				A0C954E5199329130066F88F /* JelloSwift.app */,
 				A0C954FB199329130066F88F /* JelloSwiftTests.xctest */,
 				A09CC4B41A251A880073BB62 /* JelloSwift.app */,
+				559F21F51AAA4E9D0067091D /* Jello.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,7 +341,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		559F21F21AAA4E9D0067091D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559F21FA1AAA4E9D0067091D /* Jello.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		559F21F41AAA4E9D0067091D /* Jello */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559F220E1AAA4E9E0067091D /* Build configuration list for PBXNativeTarget "Jello" */;
+			buildPhases = (
+				559F21F01AAA4E9D0067091D /* Sources */,
+				559F21F11AAA4E9D0067091D /* Frameworks */,
+				559F21F21AAA4E9D0067091D /* Headers */,
+				559F21F31AAA4E9D0067091D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jello;
+			productName = Jello;
+			productReference = 559F21F51AAA4E9D0067091D /* Jello.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A09CC4941A251A880073BB62 /* JelloSwiftStressTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A09CC4B11A251A880073BB62 /* Build configuration list for PBXNativeTarget "JelloSwiftStressTest" */;
@@ -312,10 +395,12 @@
 				A0C954E1199329130066F88F /* Sources */,
 				A0C954E2199329130066F88F /* Frameworks */,
 				A0C954E3199329130066F88F /* Resources */,
+				559F22111AAA4E9E0067091D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				559F220B1AAA4E9E0067091D /* PBXTargetDependency */,
 			);
 			name = JelloSwift;
 			productName = JelloSwift;
@@ -351,6 +436,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Luiz Fernando Silva";
 				TargetAttributes = {
+					559F21F41AAA4E9D0067091D = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 2E2NEW4A56;
+					};
 					A0C954E4199329130066F88F = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 2E2NEW4A56;
@@ -377,11 +466,19 @@
 				A0C954E4199329130066F88F /* JelloSwift */,
 				A09CC4941A251A880073BB62 /* JelloSwiftStressTest */,
 				A0C954FA199329130066F88F /* JelloSwiftTests */,
+				559F21F41AAA4E9D0067091D /* Jello */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		559F21F31AAA4E9D0067091D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A09CC4AD1A251A880073BB62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +509,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		559F21F01AAA4E9D0067091D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559F22161AAA4F090067091D /* SpringComponent.swift in Sources */,
+				559F22221AAA4F090067091D /* AABB.swift in Sources */,
+				559F22191AAA4F090067091D /* InternalSpring.swift in Sources */,
+				559F22241AAA4F090067091D /* GeomUtils.swift in Sources */,
+				559F221B1AAA4F090067091D /* Vector2.swift in Sources */,
+				559F22261AAA4F090067091D /* RenderingSettings.swift in Sources */,
+				559F22201AAA4F090067091D /* Body.swift in Sources */,
+				559F22211AAA4F090067091D /* ClosedShape.swift in Sources */,
+				559F22231AAA4F090067091D /* PointMass.swift in Sources */,
+				559F221E1AAA4F090067091D /* BodyCollisionInformation.swift in Sources */,
+				559F22251AAA4F090067091D /* Utils.swift in Sources */,
+				559F221A1AAA4F090067091D /* MaterialPair.swift in Sources */,
+				559F22171AAA4F090067091D /* PressureComponent.swift in Sources */,
+				559F22181AAA4F090067091D /* GravityComponent.swift in Sources */,
+				559F221F1AAA4F090067091D /* World.swift in Sources */,
+				559F221D1AAA4F090067091D /* Bitmask.swift in Sources */,
+				559F221C1AAA4F090067091D /* Vector3.swift in Sources */,
+				559F22151AAA4F090067091D /* BodyComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A09CC4951A251A880073BB62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,28 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C954EF199329130066F88F /* GameScene.swift in Sources */,
-				A0C95511199336460066F88F /* AABB.swift in Sources */,
-				A0C9550F199333D30066F88F /* PointMass.swift in Sources */,
-				A0C9553619946BA00066F88F /* GeomUtils.swift in Sources */,
-				A0C955331993C37C0066F88F /* BodyCollisionInformation.swift in Sources */,
-				A0C9553D1995C2590066F88F /* RenderingSettings.swift in Sources */,
-				A0C9550D199329280066F88F /* Vector2.swift in Sources */,
-				A06EC14D199FD49200402D4C /* SpringComponent.swift in Sources */,
 				A0414E781A9503ED0031866D /* CustomView.swift in Sources */,
-				A0C95520199342D10066F88F /* InternalSpring.swift in Sources */,
-				A05ECD5319B1A38C00F84326 /* GravityComponent.swift in Sources */,
-				A06EC151199FDB2300402D4C /* PressureComponent.swift in Sources */,
-				A081CFE21996B04D00C7CA49 /* PolyDrawer.swift in Sources */,
-				A0C9551A19933D9B0066F88F /* Bitmask.swift in Sources */,
 				A0C954F1199329130066F88F /* GameViewController.swift in Sources */,
-				A06EC14F199FD4EE00402D4C /* BodyComponent.swift in Sources */,
-				A0C9552C1993BC150066F88F /* Body.swift in Sources */,
-				A0C95526199344390066F88F /* Utils.swift in Sources */,
-				A0C955291993BB360066F88F /* MaterialPair.swift in Sources */,
-				A0C9551D199340BD0066F88F /* Vector3.swift in Sources */,
 				A0C954EB199329130066F88F /* AppDelegate.swift in Sources */,
-				A0C9552F1993BFA50066F88F /* World.swift in Sources */,
-				A0C95523199343DF0066F88F /* ClosedShape.swift in Sources */,
+				559F22281AAA5A990067091D /* PolyDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +608,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		559F220B1AAA4E9E0067091D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 559F21F41AAA4E9D0067091D /* Jello */;
+			targetProxy = 559F220A1AAA4E9E0067091D /* PBXContainerItemProxy */;
+		};
 		A0C954FD199329130066F88F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0C954E4199329130066F88F /* JelloSwift */;
@@ -533,6 +642,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		559F220F1AAA4E9E0067091D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Jello/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		559F22101AAA4E9E0067091D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Jello/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A09CC4B21A251A880073BB62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -713,6 +865,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		559F220E1AAA4E9E0067091D /* Build configuration list for PBXNativeTarget "Jello" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559F220F1AAA4E9E0067091D /* Debug */,
+				559F22101AAA4E9E0067091D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A09CC4B11A251A880073BB62 /* Build configuration list for PBXNativeTarget "JelloSwiftStressTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -8,12 +8,12 @@
 
 import Foundation
 
-func +=<T>(inout lhs:Array<T>, rhs:T)
+public func +=<T>(inout lhs:Array<T>, rhs:T)
 {
     lhs.append(rhs);
 }
 
-func -=<T: Equatable>(inout lhs:Array<T>, rhs:T)
+public func -=<T: Equatable>(inout lhs:Array<T>, rhs:T)
 {
     lhs.remove(rhs);
 }

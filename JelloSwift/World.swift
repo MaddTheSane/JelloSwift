@@ -9,15 +9,15 @@
 import UIKit
 
 /// Represents a simulation world, containing soft bodies and the code utilized to make them interact with each other
-class World
+public class World
 {
     /// The bodies contained within this world
-    var bodies: [Body] = [];
+    public var bodies: [Body] = [];
     
     // PRIVATE VARIABLES
-    var worldLimits:AABB = AABB();
-    var worldSize:Vector2 = Vector2();
-    var worldGridStep:Vector2 = Vector2();
+    internal var worldLimits:AABB = AABB();
+    internal var worldSize:Vector2 = Vector2();
+    internal var worldGridStep:Vector2 = Vector2();
     
     var penetrationThreshold: CGFloat = 0;
     var penetrationCount: Int = 0;
@@ -29,13 +29,13 @@ class World
     
     var collisionList: [BodyCollisionInformation] = [];
     
-    init()
+    public init()
     {
         self.clear();
     }
     
     /// Clears the world's contents and readies it to be loaded again
-    func clear()
+    public func clear()
     {
         // Clear all the bodies
         for b in bodies
@@ -250,7 +250,7 @@ class World
     }
     
     /// Updates the world by a specific timestep
-    func update(elapsed: CGFloat)
+    public func update(elapsed: CGFloat)
     {
         penetrationCount = 0;
         

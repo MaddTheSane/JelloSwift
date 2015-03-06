@@ -8,7 +8,7 @@
 
 import UIKit
 import SpriteKit
-
+import Jello
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {

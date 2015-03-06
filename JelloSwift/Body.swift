@@ -8,22 +8,22 @@
 
 import UIKit
 
-func ==(lhs: Body, rhs: Body) -> Bool
+public func ==(lhs: Body, rhs: Body) -> Bool
 {
     return lhs === rhs;
 }
 
 /// Represents a soft body on the world
-class Body: Equatable
+public class Body: Equatable
 {
     /// The base shape for the body
     var baseShape: ClosedShape = ClosedShape();
     
     /// The global shape for the body - this is the same as the base shape, but rotated and translated around the world
-    var globalShape: [Vector2] = [];
+    public var globalShape: [Vector2] = [];
     
     /// The array of point masses for the body
-    var pointMasses: [PointMass] = [];
+    public var pointMasses: [PointMass] = [];
     /// An array of all the collision that involve this body
     var pointMassCollisions: [BodyCollisionInformation] = [];
     /// Whether to collect the collisions of this body into the pointMassCollisions array. Defaults to false
@@ -37,7 +37,7 @@ class Body: Equatable
     var derivedVel: Vector2 = Vector2();
     /// The velocity damping to apply to the body. Values closer to 0 deaccelerate faster, values closer to 1 deaccelerate slower.
     /// 1 never deaccelerates. Values outside the range [0, 1] inclusive may introduce instability
-    var velDamping: CGFloat = 0.999;
+    public var velDamping: CGFloat = 0.999;
     
     /// The array of body components for this body object
     var components: [BodyComponent] = [];
@@ -52,7 +52,7 @@ class Body: Equatable
     private var lastAngle: CGFloat = 0;
     
     /// Gets a list of vertices that represents the current position of each PointMass in this body
-    var vertices: [Vector2]
+    public var vertices: [Vector2]
     {
         return pointMasses.map({ $0.position });
     }
@@ -63,13 +63,13 @@ class Body: Equatable
     /// The index of the material in the world material array to use for this body
     var material: Int = 0;
     /// Whether this body is static
-    var isStatic: Bool = false;
+    public var isStatic: Bool = false;
     /// Whether this body is kinematic - kinematic bodies do not rotate or move their base shape, so they always appear to not move, like a static body, but can be squished and moved, like a dynamic body
-    var isKinematic: Bool = false;
+    public var isKinematic: Bool = false;
     /// Whether this body is pinned - pinned bodies rotate around their axis, but try to remain in place, like a kinematic body
-    var isPined: Bool = false;
+    public var isPined: Bool = false;
     /// Whether the body is able to rotate while moving
-    var freeRotate: Bool = true;
+    public var freeRotate: Bool = true;
     
     /// A free field that can be used to attach custom objects to a soft body instance
     var objectTag: Any? = nil;
@@ -88,7 +88,7 @@ class Body: Equatable
     /// The Y-axis bitmask for the body - used for collision filtering
     var bitmaskY: Bitmask = 0;
     
-    init(world: World?, shape: ClosedShape, pointMasses: [CGFloat] = [1], position: Vector2 = Vector2.Zero, angle: CGFloat = 0, scale: Vector2 = Vector2.One, kinematic: Bool = false, components: [BodyComponentCreator] = [])
+    public init(world: World?, shape: ClosedShape, pointMasses: [CGFloat] = [1], position: Vector2 = Vector2.Zero, angle: CGFloat = 0, scale: Vector2 = Vector2.One, kinematic: Bool = false, components: [BodyComponentCreator] = [])
     {
         self.aabb = AABB();
         self.derivedPos = position;
@@ -146,7 +146,7 @@ class Body: Equatable
     
     /// Gets a component on this body that matches the given component type.
     /// If no matching components are found, nil is returned instead
-    func getComponentType<T: BodyComponent>(componentType: T.Type) -> T?
+    public func getComponentType<T: BodyComponent>(componentType: T.Type) -> T?
     {
         for comp in self.components
         {
@@ -160,7 +160,7 @@ class Body: Equatable
     }
     
     /// Removes a component from this body
-    func removeComponentType<T: BodyComponent>(componentType: T.Type)
+    public func removeComponentType<T: BodyComponent>(componentType: T.Type)
     {
         for comp in self.components
         {

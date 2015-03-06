@@ -8,27 +8,27 @@
 
 import UIKit
 
-// Specifies a point mass that composes a body
-class PointMass
+/// Specifies a point mass that composes a body
+public class PointMass
 {
-    // The mass of this point mass.
-    // Leave this value always >0 to maintain consistency on the simulation, unless
-    // the point is supposed to fixed
+    /// The mass of this point mass.
+    /// Leave this value always >0 to maintain consistency on the simulation, unless
+    /// the point is supposed to fixed
     var mass: CGFloat = 1;
     
-    // The spatial information for the point mass
-    var position: Vector2 = Vector2();
-    var velocity: Vector2 = Vector2();
-    var force: Vector2 = Vector2();
+    /// The spatial information for the point mass
+    public var position: Vector2 = Vector2();
+    public var velocity: Vector2 = Vector2();
+    public var force: Vector2 = Vector2();
     
-    init(mass: CGFloat = 0, position: Vector2 = Vector2())
+    public init(mass: CGFloat = 0, position: Vector2 = Vector2())
     {
         self.mass = mass;
         self.position = position;
     }
     
-    // Integrates a single physics simulation step for this point mass
-    func integrate(elapsed: CGFloat)
+    /// Integrates a single physics simulation step for this point mass
+    public func integrate(elapsed: CGFloat)
     {
         if (mass != CGFloat.infinity)
         {
@@ -42,8 +42,8 @@ class PointMass
         force = Vector2();
     }
     
-    // Applies the given force vector to this point mass
-    func applyForce(force: Vector2)
+    /// Applies the given force vector to this point mass
+    public func applyForce(force: Vector2)
     {
         self.force += force;
     }

@@ -9,26 +9,26 @@
 import UIKit
 
 /// Represents an axis-aligned bounding box, utilized to figure out the AABB of soft-bodies
-class AABB
+public class AABB
 {
     /// The validity of this AABB
-    var validity = PointValidity.Invalid;
+    public var validity = PointValidity.Invalid;
     
     /// Minimum and maximum points for this bounding box
-    var minimum = Vector2();
-    var maximum = Vector2();
+    public var minimum = Vector2();
+    public var maximum = Vector2();
     
     /// Gets the X position of this AABB
-    var x: CGFloat { return minimum.X; }
+    public var x: CGFloat { return minimum.X; }
     /// Gets the Y position of this AABB
-    var y: CGFloat { return minimum.Y; }
+    public var y: CGFloat { return minimum.Y; }
     
     /// Gets the width of this AABB
-    var width: CGFloat { return maximum.X - minimum.X; }
+    public var width: CGFloat { return maximum.X - minimum.X; }
     /// Gets the height of this AABB
-    var height: CGFloat { return maximum.Y - minimum.Y; }
+    public var height: CGFloat { return maximum.Y - minimum.Y; }
     
-    init()
+    public init()
     {
         
     }
@@ -56,7 +56,7 @@ class AABB
         }
     }
     
-    init(points: [Vector2])
+    public init(points: [Vector2])
     {
         self.validity = PointValidity.Invalid;
         self.expandToInclude(points);
@@ -124,8 +124,8 @@ class AABB
     }
 }
 
-// Specifies the point validity for a whole AABB
-enum PointValidity
+/// Specifies the point validity for a whole AABB
+public enum PointValidity
 {
     case Valid
     case Invalid
