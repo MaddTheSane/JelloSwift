@@ -126,31 +126,7 @@ struct Vector2: Equatable, Printable
     /// Returns a string representation of this Vector2 value
     func toString() -> String
     {
-        var str = "{ "
-        
-        if(isnan(X))
-        {
-            str += "nan"
-        }
-        else
-        {
-            str += X.description
-        }
-        
-        str += " : "
-        
-        if(isnan(Y))
-        {
-            str += "nan"
-        }
-        else
-        {
-            str += Y.description
-        }
-        
-        str += " }"
-        
-        return str
+        return "{ \(self.X) : \(self.Y) }";
     }
 }
 
@@ -356,4 +332,13 @@ func *=(inout lhs: Vector2, rhs: Int)
 func /=(inout lhs: Vector2, rhs: Int)
 {
     lhs = lhs / rhs;
+}
+
+/// Extension to the CGPoint class that helps with Vector2 interactions
+extension CGPoint
+{
+    init(v: Vector2)
+    {
+        self.init(x: v.X, y: v.Y);
+    }
 }

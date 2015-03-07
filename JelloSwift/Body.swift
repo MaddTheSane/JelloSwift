@@ -16,6 +16,9 @@ func ==(lhs: Body, rhs: Body) -> Bool
 /// Represents a soft body on the world
 class Body: Equatable
 {
+    /// List of body joints this body participates in
+    var joints: [BodyJoint] = [];
+    
     /// The base shape for the body
     var baseShape: ClosedShape = ClosedShape();
     
@@ -113,10 +116,7 @@ class Body: Equatable
             }
         }
         
-        for i in 0..<min(self.pointMasses.count, points.count)
-        {
-            self.pointMasses[i].mass = points[i];
-        }
+        setMassFromList(points);
         
         self.updateAABB(0, forceUpdate: true);
         
@@ -174,6 +174,9 @@ class Body: Equatable
     
     /// Updates the AABB for this body, including padding for velocity given a timestep.
     /// This function is called by the World object on Update(), so the user should not need this in most cases.
+    /// 
+    /// :param: elapsed elapsed The elapsed time to update by, usually in seconds
+    /// :param: forceUpdate Whether to force the update of the body, even if it's a static body
     func updateAABB(elapsed: CGFloat, forceUpdate: Bool)
     {
         if(isStatic || forceUpdate)
@@ -222,6 +225,8 @@ class Body: Equatable
         {
             point.mass = mass;
         }
+        
+        isStatic = isinf(mass);
     }
     
     /// Sets the mass for a single PointMass individually
@@ -233,10 +238,16 @@ class Body: Equatable
     /// Sets the mass for all the point masses from a list of masses
     func setMassFromList(masses: [CGFloat])
     {
+        var allStatic = true;
+        
         for i in 0..<min(masses.count, self.pointMasses.count)
         {
+            allStatic = allStatic && isinf(masses[i]);
+            
             self.pointMasses[i].mass = masses[i];
         }
+        
+        isStatic = allStatic;
     }
     
     /// Sets the position and angle of the body manually.
