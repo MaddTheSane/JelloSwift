@@ -216,7 +216,7 @@ public class World
         
         for body in bodies
         {
-            if((bit == 0 || (body.bitmask & bit) != 0) && body.intersectsLine(start, end))
+            if((bit == 0 || (body.bitmask & bit) != 0) && body.intersectsLine(start: start, end: end))
             {
                 ret += body;
             }

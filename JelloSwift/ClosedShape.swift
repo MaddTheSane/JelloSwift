@@ -58,9 +58,8 @@ public class ClosedShape
     /// Transforms all vertices by the given angle and scale
     public func transformOwn(angleInRadians: CGFloat, localScale: Vector2)
     {
-        for i in 0..<localVertices.count
-        {
-            localVertices[i] = rotateVector(localVertices[i] * localScale, angleInRadians);
+        localVertices = localVertices.map { (localVert) -> Vector2 in
+            return rotateVector(localVert * localScale, angleInRadians)
         }
     }
     
@@ -82,7 +81,7 @@ public class ClosedShape
     /// Transforms the points on this closed shape into the given array of points.
     /// The array of points must have the same count of vertices as this closed shape
     /// transformation is applied in the following order:  scale -> rotation -> position.
-    public func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1))
+    public func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2.One)
     {
         let count = localVertices.count;
 		for (i, lv) in enumerate(localVertices)

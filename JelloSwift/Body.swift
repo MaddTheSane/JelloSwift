@@ -134,7 +134,7 @@ public class Body: Equatable
     }
     
     /// Adds a body component to this body
-    func addComponentType<T: BodyComponent>(componentType: T.Type) -> T
+    public func addComponentType<T: BodyComponent>(componentType: T.Type) -> T
     {
         var instance = componentType(body: self);
         
@@ -493,7 +493,7 @@ public class Body: Equatable
     }
     
     /// Returns whether the given line consisting of two points intersects this body
-    func intersectsLine(start: Vector2, _ end: Vector2) -> Bool
+    func intersectsLine(#start: Vector2, end: Vector2) -> Bool
     {
         // Test whether one or both the points of the line are inside the body
         if(contains(start) || contains(end))
