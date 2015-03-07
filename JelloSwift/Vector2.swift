@@ -19,7 +19,7 @@ public struct Vector2: Comparable, Printable
     
     public var X: CGFloat;
     public var Y: CGFloat;
-    public var description: String { return toString(); };
+    public var description: String { return stringValue; };
     
     public init()
     {
@@ -125,7 +125,7 @@ public struct Vector2: Comparable, Printable
     }
     
     /// Returns a string representation of this Vector2 value
-    public func toString() -> String
+    public var stringValue: String
     {
         return "{ \(self.X) : \(self.Y) }";
     }
@@ -338,7 +338,7 @@ public func /=(inout lhs: Vector2, rhs: Int)
 /// Extension to the CGPoint class that helps with Vector2 interactions
 extension CGPoint
 {
-    init(v: Vector2)
+    public init(v: Vector2)
     {
         self.init(x: v.X, y: v.Y);
     }

@@ -21,7 +21,7 @@ public struct Vector3: Equatable
         
     }
     
-    public init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)
+    public init(x: CGFloat, y: CGFloat, z: CGFloat)
     {
         self.X = x;
         self.Y = y;
@@ -53,5 +53,5 @@ public func =/(lhs: Vector3, rhs: Vector3) -> Vector3
     var xz = (lhs.Z * rhs.X) - (lhs.X * rhs.Z)
     var xy = (lhs.X * rhs.Y) - (lhs.Y * rhs.X)
     
-    return Vector3(yz, xz, xy);
+    return Vector3(x: yz, y: xz, z: xy);
 }

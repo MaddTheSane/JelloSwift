@@ -93,7 +93,6 @@
 		A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
 		A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
 		A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EA199329130066F88F /* AppDelegate.swift */; };
-		A09CC4AA1A251A880073BB62 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
 		A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
 		A09CC4AE1A251A880073BB62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
 		A09CC4AF1A251A880073BB62 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0C954EC199329130066F88F /* GameScene.sks */; };
@@ -116,7 +115,6 @@
 		A0C95527199344390066F88F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		A0C9552A1993BB360066F88F /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
 		A0C9552D1993BC150066F88F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
-		A0C955301993BFA50066F88F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
 		A0C955341993C37C0066F88F /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
 		A0C9553719946BA00066F88F /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
 		A0C9553E1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
@@ -813,7 +811,6 @@
 				A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */,
 				A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */,
 				A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */,
-				A09CC4AA1A251A880073BB62 /* World.swift in Sources */,
 				A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,7 +845,6 @@
 				A0C95527199344390066F88F /* Utils.swift in Sources */,
 				A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */,
 				A0C9551719933ADA0066F88F /* Vector2.swift in Sources */,
-				A0C955301993BFA50066F88F /* World.swift in Sources */,
 				A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */,
 				A0C9551819933ADA0066F88F /* PointMass.swift in Sources */,
 				A0C95521199342D10066F88F /* InternalSpring.swift in Sources */,

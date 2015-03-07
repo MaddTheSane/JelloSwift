@@ -14,7 +14,7 @@ public class World
 {
     /// The bodies contained within this world
     public var bodies: [Body] = [];
-    var joints: [BodyJoint] = [];
+    public var joints: [BodyJoint] = [];
     
     // PRIVATE VARIABLES
     internal var worldLimits:AABB = AABB();
