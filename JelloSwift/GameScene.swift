@@ -100,6 +100,11 @@ class GameScene: SKScene
         createBox(toWorldCoords(Vector2(size.width * 0.3, size.height / 2)), size: Vector2(2, 2), kinematic: true);
         createBox(toWorldCoords(Vector2(size.width * 0.7, size.height / 2)), size: Vector2(2, 2), kinematic: true);
         
+        // Create a few structures to showcase the joints feature
+        createLinkedBouncyBalls(toWorldCoords(Vector2(size.width / 2, size.height * 0.65)));
+        createBallBoxLinkedStructure(toWorldCoords(Vector2(size.width * 0.8, size.height * 0.8)));
+        createScaleStructure(toWorldCoords(Vector2(size.width * 0.4, size.height * 0.8)));
+        
         // Create the ground box
         var box = ClosedShape();
         box.begin();
@@ -199,6 +204,10 @@ class GameScene: SKScene
         
         self.polyDrawer?.reset();
         
+        for joint in world.joints
+        {
+            drawJoint(joint);
+        }
         for body in world.bodies
         {
             drawBody(body);
@@ -245,6 +254,17 @@ class GameScene: SKScene
         {
             dragShape.hidden = true;
         }
+    }
+    
+    func drawJoint(joint: BodyJoint)
+    {
+        let start = toScreenCoords(joint.bodyLink1.getPosition());
+        let end = toScreenCoords(joint.bodyLink2.getPosition());
+        
+        let points = [CGPoint(v: start),
+                      CGPoint(v: end)];
+        
+        polyDrawer?.queuePoly(points, fillColor: 0xFFFFFFFF, strokeColor: 0xFFEEEEEE);
     }
     
     func drawBody(body: Body)
@@ -333,5 +353,55 @@ class GameScene: SKScene
         body.isPined = pinned;
         
         return body;
+    }
+    
+    /// Creates two linked bouncy balls in a given position in the world
+    func createLinkedBouncyBalls(pos: Vector2)
+    {
+        let b1 = createBouncyBall(pos - Vector2(1, 0), pinned: false, kinematic: false, radius: 1);
+        let b2 = createBouncyBall(pos + Vector2(1, 0), pinned: false, kinematic: false, radius: 1);
+        
+        // Create the joint links
+        let l1 = BodyJointLink(body: b1);
+        let l2 = BodyJointLink(body: b2);
+        
+        SpringBodyJoint(world: world, link1: l1, link2: l2, springK: 100, springD: 20);
+    }
+    
+    /// Creates a pinned box with a ball attached to one if its edges
+    func createBallBoxLinkedStructure(pos: Vector2)
+    {
+        let b1 = createBouncyBall(pos - Vector2(0, 2), pinned: false, kinematic: false, radius: 1);
+        let b2 = createBox(pos, size: Vector2(1, 1), pinned: true, kinematic: false);
+        
+        // Create the joint links
+        let l1 = BodyJointLink(body: b1);
+        let l2 = EdgeJointLink(body: b2, edgeIndex: 2, edgeRatio: 0.5);
+        
+        SpringBodyJoint(world: world, link1: l1, link2: l2, springK: 100, springD: 20);
+    }
+    
+    /// Creates a pinned box with two balls attached to one if its edges
+    func createScaleStructure(pos: Vector2)
+    {
+        let b1 = createBox(pos, size: Vector2(2, 1), pinned: true, kinematic: false);
+        let b2 = createBouncyBall(pos + Vector2(-1.6, -2), pinned: false, kinematic: false, radius: 1);
+        let b3 = createBouncyBall(pos + Vector2( 1.6, -2), pinned: false, kinematic: false, radius: 1);
+        
+        // Create the joints that link the box with the left sphere
+        let l1 = BodyJointLink(body: b2);
+        let l2 = EdgeJointLink(body: b1, edgeIndex: 2, edgeRatio: 0.8);
+        
+        // Create the joints that link the box with the right sphere
+        let l3 = BodyJointLink(body: b3);
+        let l4 = EdgeJointLink(body: b1, edgeIndex: 2, edgeRatio: 0.2);
+        
+        // Create the joints
+        let joint1 = SpringBodyJoint(world: world, link1: l1, link2: l2, springK: 100, springD: 20);
+        let joint2 = SpringBodyJoint(world: world, link1: l3, link2: l4, springK: 100, springD: 20);
+        
+        // Enable collision between the bodies
+        joint1.allowCollisions = true;
+        joint2.allowCollisions = true;
     }
 }

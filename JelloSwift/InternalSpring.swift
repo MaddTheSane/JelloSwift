@@ -15,16 +15,16 @@ public class InternalSpring
     public internal(set) var pointMassA: PointMass;
     public internal(set) var pointMassB: PointMass;
     
-    public internal(set) var springD: CGFloat = 0;
+    public internal(set) var distance: CGFloat = 0;
     public internal(set) var springK: CGFloat = 0;
-    public internal(set) var damping: CGFloat = 0;
+    public internal(set) var springD: CGFloat = 0;
     
-    init(_ pmA: PointMass, _ pmB: PointMass, _ springD: CGFloat = 0, _ springK: CGFloat, _ damping: CGFloat)
+    init(_ pmA: PointMass, _ pmB: PointMass, _ distance: CGFloat = 0, _ springK: CGFloat, _ springD: CGFloat)
     {
         self.pointMassA = pmA;
         self.pointMassB = pmB;
-        self.springD = springD;
+        self.distance = distance;
         self.springK = springK;
-        self.damping = damping;
+        self.springD = springD;
     }
 }

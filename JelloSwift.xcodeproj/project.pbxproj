@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553F8EDB1AAA907D00776B71 /* SpringBodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */; };
+		553F8EDC1AAA907D00776B71 /* PointJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF01AAA41D700C03017 /* PointJointLink.swift */; };
+		553F8EDD1AAA907D00776B71 /* EdgeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */; };
+		553F8EDE1AAA907D00776B71 /* BodyJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */; };
+		553F8EDF1AAA907D00776B71 /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
+		553F8EE01AAA907E00776B71 /* SpringBodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */; };
+		553F8EE11AAA907E00776B71 /* PointJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF01AAA41D700C03017 /* PointJointLink.swift */; };
+		553F8EE21AAA907E00776B71 /* EdgeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */; };
+		553F8EE31AAA907E00776B71 /* BodyJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */; };
+		553F8EE41AAA907E00776B71 /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
 		559F21FA1AAA4E9D0067091D /* Jello.h in Headers */ = {isa = PBXBuildFile; fileRef = 559F21F91AAA4E9D0067091D /* Jello.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		559F220C1AAA4E9E0067091D /* Jello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; };
 		559F220D1AAA4E9E0067091D /* Jello.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -176,6 +186,12 @@
 		55BCAC171AAA693200F6D2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0414E771A9503ED0031866D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		A0510AEC1AAA341C00C03017 /* BodyJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyJoint.swift; sourceTree = "<group>"; };
+		A0510AF01AAA41D700C03017 /* PointJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointJointLink.swift; sourceTree = "<group>"; };
+		A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeJointLink.swift; sourceTree = "<group>"; };
+		A0510AF41AAA4B4500C03017 /* GeomUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeomUtilsTests.swift; sourceTree = "<group>"; };
+		A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyJointLink.swift; sourceTree = "<group>"; };
+		A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBodyJoint.swift; sourceTree = "<group>"; };
+		A0510B001AAA573B00C03017 /* ShapeJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeJointLink.swift; sourceTree = "<group>"; };
 		A05ECD5219B1A38C00F84326 /* GravityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityComponent.swift; sourceTree = "<group>"; };
 		A06EC14C199FD49200402D4C /* SpringComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringComponent.swift; sourceTree = "<group>"; };
 		A06EC14E199FD4EE00402D4C /* BodyComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyComponent.swift; sourceTree = "<group>"; };
@@ -315,6 +331,27 @@
 			isa = PBXGroup;
 			children = (
 				A0510AEC1AAA341C00C03017 /* BodyJoint.swift */,
+				A0510AFF1AAA544C00C03017 /* Joints */,
+				A0510AFE1AAA544000C03017 /* Joint Links */,
+			);
+			name = Joints;
+			sourceTree = "<group>";
+		};
+		A0510AFE1AAA544000C03017 /* Joint Links */ = {
+			isa = PBXGroup;
+			children = (
+				A0510AF01AAA41D700C03017 /* PointJointLink.swift */,
+				A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */,
+				A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */,
+				A0510B001AAA573B00C03017 /* ShapeJointLink.swift */,
+			);
+			name = "Joint Links";
+			sourceTree = "<group>";
+		};
+		A0510AFF1AAA544C00C03017 /* Joints */ = {
+			isa = PBXGroup;
+			children = (
+				A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */,
 			);
 			name = Joints;
 			sourceTree = "<group>";
@@ -397,6 +434,7 @@
 				A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */,
 				A07D54701997E4EE003C9669 /* PointMassTests.swift */,
 				A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */,
+				A0510AF41AAA4B4500C03017 /* GeomUtilsTests.swift */,
 				A0C954FF199329130066F88F /* Supporting Files */,
 			);
 			path = JelloSwiftTests;
@@ -693,11 +731,16 @@
 				559F221E1AAA4F090067091D /* BodyCollisionInformation.swift in Sources */,
 				559F22251AAA4F090067091D /* Utils.swift in Sources */,
 				559F221A1AAA4F090067091D /* MaterialPair.swift in Sources */,
+				553F8EDC1AAA907D00776B71 /* PointJointLink.swift in Sources */,
 				559F22171AAA4F090067091D /* PressureComponent.swift in Sources */,
+				553F8EDE1AAA907D00776B71 /* BodyJointLink.swift in Sources */,
 				559F22181AAA4F090067091D /* GravityComponent.swift in Sources */,
+				553F8EDD1AAA907D00776B71 /* EdgeJointLink.swift in Sources */,
 				559F221F1AAA4F090067091D /* World.swift in Sources */,
+				553F8EDF1AAA907D00776B71 /* ShapeJointLink.swift in Sources */,
 				55AF84311AAA706D0031B099 /* BodyJoint.swift in Sources */,
 				559F221D1AAA4F090067091D /* Bitmask.swift in Sources */,
+				553F8EDB1AAA907D00776B71 /* SpringBodyJoint.swift in Sources */,
 				559F221C1AAA4F090067091D /* Vector3.swift in Sources */,
 				559F22151AAA4F090067091D /* BodyComponent.swift in Sources */,
 			);
@@ -719,11 +762,16 @@
 				55BCAC061AAA658B00F6D2E6 /* BodyCollisionInformation.swift in Sources */,
 				55BCAC0D1AAA658B00F6D2E6 /* Utils.swift in Sources */,
 				55BCAC021AAA658B00F6D2E6 /* MaterialPair.swift in Sources */,
+				553F8EE11AAA907E00776B71 /* PointJointLink.swift in Sources */,
 				55BCABFF1AAA658B00F6D2E6 /* PressureComponent.swift in Sources */,
+				553F8EE31AAA907E00776B71 /* BodyJointLink.swift in Sources */,
 				55BCAC001AAA658B00F6D2E6 /* GravityComponent.swift in Sources */,
+				553F8EE21AAA907E00776B71 /* EdgeJointLink.swift in Sources */,
 				55BCAC071AAA658B00F6D2E6 /* World.swift in Sources */,
+				553F8EE41AAA907E00776B71 /* ShapeJointLink.swift in Sources */,
 				55AF84301AAA706C0031B099 /* BodyJoint.swift in Sources */,
 				55BCAC051AAA658B00F6D2E6 /* Bitmask.swift in Sources */,
+				553F8EE01AAA907E00776B71 /* SpringBodyJoint.swift in Sources */,
 				55BCAC041AAA658B00F6D2E6 /* Vector3.swift in Sources */,
 				55BCABFD1AAA658B00F6D2E6 /* BodyComponent.swift in Sources */,
 			);
