@@ -17,6 +17,7 @@
 		553F8EE21AAA907E00776B71 /* EdgeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */; };
 		553F8EE31AAA907E00776B71 /* BodyJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */; };
 		553F8EE41AAA907E00776B71 /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
+		553F8F121AAA9AB800776B71 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		559F21FA1AAA4E9D0067091D /* Jello.h in Headers */ = {isa = PBXBuildFile; fileRef = 559F21F91AAA4E9D0067091D /* Jello.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		559F220C1AAA4E9E0067091D /* Jello.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; };
 		559F220D1AAA4E9E0067091D /* Jello.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 559F21F51AAA4E9D0067091D /* Jello.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,34 +67,14 @@
 		55BCAC231AAA696300F6D2E6 /* ClosedShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */; };
 		A0414E781A9503ED0031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
 		A0414E791A9508850031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
-		A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
-		A05ECD5519B1A6D700F84326 /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
-		A05ECD5619B1A6D700F84326 /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
-		A05ECD5719B1A6D700F84326 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
 		A07D54711997E4EE003C9669 /* PointMassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D54701997E4EE003C9669 /* PointMassTests.swift */; };
 		A081CFE21996B04D00C7CA49 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
 		A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */; };
 		A09CC4961A251A880073BB62 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EE199329130066F88F /* GameScene.swift */; };
-		A09CC4971A251A880073BB62 /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
-		A09CC4981A251A880073BB62 /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
-		A09CC4991A251A880073BB62 /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
-		A09CC49A1A251A880073BB62 /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
-		A09CC49B1A251A880073BB62 /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
-		A09CC49C1A251A880073BB62 /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550C199329280066F88F /* Vector2.swift */; };
-		A09CC49D1A251A880073BB62 /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
-		A09CC49E1A251A880073BB62 /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
-		A09CC49F1A251A880073BB62 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
-		A09CC4A01A251A880073BB62 /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A09CC4A11A251A880073BB62 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
-		A09CC4A21A251A880073BB62 /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
 		A09CC4A31A251A880073BB62 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954F0199329130066F88F /* GameViewController.swift */; };
-		A09CC4A41A251A880073BB62 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
-		A09CC4A51A251A880073BB62 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
 		A09CC4A61A251A880073BB62 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
-		A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
-		A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
 		A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EA199329130066F88F /* AppDelegate.swift */; };
-		A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
 		A09CC4AE1A251A880073BB62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
 		A09CC4AF1A251A880073BB62 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0C954EC199329130066F88F /* GameScene.sks */; };
 		A09CC4B01A251A880073BB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F2199329130066F88F /* Main.storyboard */; };
@@ -104,20 +85,8 @@
 		A0C954F4199329130066F88F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F2199329130066F88F /* Main.storyboard */; };
 		A0C954F6199329130066F88F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
 		A0C95502199329130066F88F /* JelloSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95501199329130066F88F /* JelloSwiftTests.swift */; };
-		A0C9551619933ADA0066F88F /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
-		A0C9551719933ADA0066F88F /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550C199329280066F88F /* Vector2.swift */; };
-		A0C9551819933ADA0066F88F /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
-		A0C9551B199340060066F88F /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
-		A0C9551E199340BD0066F88F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
-		A0C95521199342D10066F88F /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
-		A0C95524199343DF0066F88F /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
 		A0C95526199344390066F88F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		A0C95527199344390066F88F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
-		A0C9552A1993BB360066F88F /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
-		A0C9552D1993BC150066F88F /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
-		A0C955341993C37C0066F88F /* BodyCollisionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */; };
-		A0C9553719946BA00066F88F /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
-		A0C9553E1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -783,6 +752,7 @@
 				55BCAC221AAA696300F6D2E6 /* PointMassTests.swift in Sources */,
 				55BCAC211AAA696300F6D2E6 /* PhysicsMathTest.swift in Sources */,
 				55BCAC231AAA696300F6D2E6 /* ClosedShapeTests.swift in Sources */,
+				553F8F121AAA9AB800776B71 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,27 +761,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A09CC4961A251A880073BB62 /* GameScene.swift in Sources */,
-				A09CC4971A251A880073BB62 /* AABB.swift in Sources */,
-				A09CC4981A251A880073BB62 /* PointMass.swift in Sources */,
-				A09CC4991A251A880073BB62 /* GeomUtils.swift in Sources */,
-				A09CC49A1A251A880073BB62 /* BodyCollisionInformation.swift in Sources */,
-				A09CC49B1A251A880073BB62 /* RenderingSettings.swift in Sources */,
-				A09CC49C1A251A880073BB62 /* Vector2.swift in Sources */,
-				A09CC49D1A251A880073BB62 /* SpringComponent.swift in Sources */,
 				A0414E791A9508850031866D /* CustomView.swift in Sources */,
-				A09CC49E1A251A880073BB62 /* InternalSpring.swift in Sources */,
-				A09CC49F1A251A880073BB62 /* GravityComponent.swift in Sources */,
-				A09CC4A01A251A880073BB62 /* PressureComponent.swift in Sources */,
 				A09CC4A11A251A880073BB62 /* PolyDrawer.swift in Sources */,
-				A09CC4A21A251A880073BB62 /* Bitmask.swift in Sources */,
 				A09CC4A31A251A880073BB62 /* GameViewController.swift in Sources */,
-				A09CC4A41A251A880073BB62 /* BodyComponent.swift in Sources */,
-				A09CC4A51A251A880073BB62 /* Body.swift in Sources */,
 				A09CC4A61A251A880073BB62 /* Utils.swift in Sources */,
-				A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */,
-				A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */,
 				A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */,
-				A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,27 +786,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */,
-				A05ECD5519B1A6D700F84326 /* SpringComponent.swift in Sources */,
-				A05ECD5619B1A6D700F84326 /* PressureComponent.swift in Sources */,
-				A05ECD5719B1A6D700F84326 /* GravityComponent.swift in Sources */,
-				A0C9552D1993BC150066F88F /* Body.swift in Sources */,
-				A0C9553E1995C2590066F88F /* RenderingSettings.swift in Sources */,
-				A0C9551B199340060066F88F /* Bitmask.swift in Sources */,
-				A0C9551619933ADA0066F88F /* AABB.swift in Sources */,
 				A07D54711997E4EE003C9669 /* PointMassTests.swift in Sources */,
-				A0C9552A1993BB360066F88F /* MaterialPair.swift in Sources */,
 				A0C95527199344390066F88F /* Utils.swift in Sources */,
 				A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */,
-				A0C9551719933ADA0066F88F /* Vector2.swift in Sources */,
 				A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */,
-				A0C9551819933ADA0066F88F /* PointMass.swift in Sources */,
-				A0C95521199342D10066F88F /* InternalSpring.swift in Sources */,
-				A0C9551E199340BD0066F88F /* Vector3.swift in Sources */,
 				A0C95502199329130066F88F /* JelloSwiftTests.swift in Sources */,
-				A0C955341993C37C0066F88F /* BodyCollisionInformation.swift in Sources */,
-				A0C95524199343DF0066F88F /* ClosedShape.swift in Sources */,
-				A0C9553719946BA00066F88F /* GeomUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

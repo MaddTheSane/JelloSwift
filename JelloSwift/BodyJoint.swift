@@ -24,7 +24,7 @@ public class BodyJoint: Equatable
     
     /// Whether to allow collisions between the two objects joined by this BodyJoint.
     /// Defaults to false
-    var allowCollisions: Bool = false;
+    public var allowCollisions: Bool = false;
     
     /// Gets the first link that contins informationa bout the first body linked by this joint
     public var bodyLink1: JointLinkType { return _bodyLink1 }
@@ -32,7 +32,7 @@ public class BodyJoint: Equatable
     public var bodyLink2: JointLinkType { return _bodyLink2 }
     
     /// Gets or sets the rest distance for this joint
-    var restDistance: CGFloat
+    public var restDistance: CGFloat
     
     public init(world: World, link1: JointLinkType, link2: JointLinkType, distance: CGFloat = -1)
     {
@@ -42,7 +42,7 @@ public class BodyJoint: Equatable
         // Automatic distance calculation
         if(distance == -1)
         {
-            restDistance = link1.getPosition().distanceTo(link2.getPosition());
+            restDistance = link1.position.distanceTo(link2.position);
         }
         else
         {

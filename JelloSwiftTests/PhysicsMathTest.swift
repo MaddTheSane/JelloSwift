@@ -26,7 +26,7 @@ class PhysicsMathTest: XCTestCase
         
         var force = calculateSpringForce(p1, v1, p2, v2, 20, 10, 1);
         
-        println(force.toString());
+        println(force);
         
         XCTAssert(true, "Pass")
     }

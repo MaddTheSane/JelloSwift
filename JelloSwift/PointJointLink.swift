@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 /// Represents a joint link that links directly to a point mass of a body
-class PointJointLink: JointLinkType
+public class PointJointLink: JointLinkType
 {
     // This is a very straightforward implementation, it basically delegates the calls to the underlying point mass
     
@@ -21,38 +21,38 @@ class PointJointLink: JointLinkType
     private var _pointMass: PointMass;
     
     /// Gets the body that this joint link is linked to
-    var body: Body { return _body; }
+    public var body: Body { return _body; }
     
     /// Gets the type of joint this joint link represents
-    var linkType: LinkType { return LinkType.Point }
+    public var linkType: LinkType { return LinkType.Point }
     
     /// Inits a new point joint link with the specified parameters
-    init(body: Body, pointMassIndex: Int)
+    public init(body: Body, pointMassIndex: Int)
     {
         _body = body;
         _pointMass = _body.pointMasses[pointMassIndex];
     }
     
     /// Gets the position, in world coordinates, at which this joint links with the underlying body
-    func getPosition() -> Vector2
+    public var position: Vector2
     {
         return _pointMass.position;
     }
     
     /// Gets the velocity of the object this joint links to
-    func getVelocity() -> Vector2
+    public var velocity: Vector2
     {
         return _pointMass.velocity;
     }
     
     /// Gets the total mass of the subject of this joint link
-    func getMass() -> CGFloat
+    public var mass: CGFloat
     {
         return _pointMass.mass;
     }
     
     /// Gets a value specifying whether the object referenced by this JointLinkType is static
-    func isStatic() -> Bool
+    public var isStatic: Bool
     {
         return isinf(_pointMass.mass);
     }
@@ -60,7 +60,7 @@ class PointJointLink: JointLinkType
     /// Appies a given force to the subject of this joint link
     ///
     /// :param: force A force to apply to the subjects of this joint link
-    func applyForce(force: Vector2)
+    public func applyForce(force: Vector2)
     {
         _pointMass.applyForce(force);
     }

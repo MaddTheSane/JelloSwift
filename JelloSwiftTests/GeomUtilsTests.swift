@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import JelloSwift
+import Jello
 import CoreGraphics
 
 class GeomUtilsTests: XCTestCase
