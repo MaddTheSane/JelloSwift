@@ -208,6 +208,7 @@
 				A0C954E6199329130066F88F /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		A0C954E6199329130066F88F /* Products */ = {
 			isa = PBXGroup;
