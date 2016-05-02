@@ -106,14 +106,14 @@ public struct Vector2: Equatable, CustomStringConvertible
     @warn_unused_result
     public func distanceTo(vec: Vector2) -> CGFloat
     {
-        return (self - vec).magnitude()
+        return CGFloat(distance(self.theVector,vec.theVector))
     }
     
     /// Returns the distance squared between this Vector2 and another Vector2
     @warn_unused_result
     public func distanceToSquared(vec: Vector2) -> CGFloat
     {
-        return (self - vec).length()
+		return CGFloat(distance_squared(self.theVector,vec.theVector))
     }
     
     /// Makes this Vector2 perpendicular to its current position.
@@ -190,7 +190,15 @@ public func max(a: Vector2, _ b: Vector2) -> Vector2
 @warn_unused_result
 public func rotateVector(vec: Vector2, angleInRadians: CGFloat) -> Vector2
 {
-    return rotateVector(vec, angleInRadians: Double(angleInRadians))
+    if(angleInRadians % (CGFloat(M_PI) * 2) == 0)
+    {
+        return vec
+    }
+    
+    let c = cos(angleInRadians)
+    let s = sin(angleInRadians)
+    
+    return Vector2((c * vec.X) - (s * vec.Y), (c * vec.Y) + (s * vec.X))
 }
 
 @warn_unused_result
