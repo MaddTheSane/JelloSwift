@@ -6,126 +6,143 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 /// Represents an axis-aligned bounding box, utilized to figure out the AABB of soft-bodies
-class AABB
+public struct AABB
 {
     /// The validity of this AABB
-    var validity = PointValidity.Invalid;
+    public var validity = PointValidity.Invalid
     
     /// Minimum and maximum points for this bounding box
-    var minimum = Vector2();
-    var maximum = Vector2();
+    public var minimum = Vector2.Zero
+    public var maximum = Vector2.Zero
     
     /// Gets the X position of this AABB
-    var x: CGFloat { return minimum.X; }
+    public var x: CGFloat { return minimum.X }
     /// Gets the Y position of this AABB
-    var y: CGFloat { return minimum.Y; }
+    public var y: CGFloat { return minimum.Y }
     
     /// Gets the width of this AABB
-    var width: CGFloat { return maximum.X - minimum.X; }
+    public var width: CGFloat { return maximum.X - minimum.X }
     /// Gets the height of this AABB
-    var height: CGFloat { return maximum.Y - minimum.Y; }
+    public var height: CGFloat { return maximum.Y - minimum.Y }
     
-    init()
+    /// Gets the middle X position of this AABB
+    public var midX: CGFloat { return ((minimum + maximum) / 2).X }
+    /// Gets the middle Y position of this AABB
+    public var midY: CGFloat { return ((minimum + maximum) / 2).Y }
+    
+    // This guy has to be lower case otherwise sourcekit crashes
+    /// Gets a CGRect that represents the boundaries of this AABB object
+    public var cgRect: CGRect { return CGRect(x: x, y: y, width: width, height: height) }
+    
+    public init()
     {
         
     }
     
-    init(min: Vector2?, max: Vector2?)
+    public init(min: Vector2, max: Vector2)
     {
-        self.validity = PointValidity.Valid;
-        
-        if let mi = min
-        {
-            self.minimum = mi;
-        }
-        else
-        {
-            self.validity = PointValidity.Invalid;
-        }
-        
-        if let ma = max
-        {
-            self.maximum = ma;
-        }
-        else
-        {
-            self.validity = PointValidity.Invalid;
-        }
+        validity = PointValidity.Valid
+      
+        minimum = min
+        maximum = max
     }
     
-    init(points: [Vector2])
+    public init(points: [Vector2])
     {
-        self.validity = PointValidity.Invalid;
-        self.expandToInclude(points);
+        validity = PointValidity.Invalid
+        expandToInclude(points)
     }
     
-    func clear()
+    public mutating func clear()
     {
-        self.minimum = Vector2();
-        self.maximum = Vector2();
+        minimum = Vector2.Zero
+        maximum = Vector2.Zero
         
-        validity = PointValidity.Invalid;
+        validity = PointValidity.Invalid
     }
     
-    func expandToInclude(point: Vector2)
+    public mutating func expandToInclude(point: Vector2)
     {
         if(validity == PointValidity.Invalid)
         {
-            self.minimum = point;
-            self.maximum = point;
+            minimum = point
+            maximum = point
             
-            validity = PointValidity.Valid;
+            validity = PointValidity.Valid
         }
         else
         {
-            self.minimum = min(self.minimum, point);
-            self.maximum = max(self.maximum, point);
+            minimum = min(minimum, point)
+            maximum = max(maximum, point)
         }
     }
     
-    func expandToInclude(points: [Vector2])
+    public mutating func expandToInclude(points: [Vector2])
     {
         if(points.count == 0)
         {
-            return;
+            return
         }
         
         if(validity == PointValidity.Invalid)
         {
-            self.minimum = points[0];
-            self.maximum = points[0];
+            minimum = points[0]
+            maximum = points[0]
             
-            validity = PointValidity.Valid;
+            validity = PointValidity.Valid
         }
         
         for p in points
         {
-            self.minimum = min(self.minimum, p);
-            self.maximum = max(self.maximum, p);
+            minimum = min(minimum, p)
+            maximum = max(maximum, p)
         }
     }
     
-    func contains(point: Vector2) -> Bool
+    public func contains(point: Vector2) -> Bool
     {
-        if(self.validity == PointValidity.Invalid)
+        if(validity == PointValidity.Invalid)
         {
-            return false;
+            return false
         }
         
-        return point >= minimum && point <= maximum;
+        if(point.X >= minimum.X && point.Y >= minimum.Y)
+        {
+            if(point.X <= maximum.X && point.Y <= maximum.Y)
+            {
+                return true
+            }
+        }
+        
+        return false
     }
     
-    func intersects(box: AABB) -> Bool
+    public func intersects(box: AABB) -> Bool
     {
-        return self.minimum <= box.maximum && self.maximum >= box.minimum;
+        if(validity == .Invalid || box.validity == .Invalid)
+        {
+            return false
+        }
+        
+        // X overlap check.
+        if((minimum.X <= box.maximum.X) && (maximum.X >= box.minimum.X))
+        {
+            // Y overlap check
+            if((minimum.Y <= box.maximum.Y) && (maximum.Y >= box.minimum.Y))
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
 
 // Specifies the point validity for a whole AABB
-enum PointValidity
+public enum PointValidity
 {
     case Valid
     case Invalid

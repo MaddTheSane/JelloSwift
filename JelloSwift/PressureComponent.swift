@@ -6,87 +6,65 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 // Represents a Pressure component that can be added to a body to include gas pressure as an internal force
-class PressureComponent: BodyComponent
+public final class PressureComponent: BodyComponent
 {
     // PRIVATE VARIABLES
-    var volume: CGFloat = 0;
-    var gasAmmount: CGFloat = 0;
-    var normalList: [Vector2] = [];
-    var edgeLengthList: [CGFloat] = [];
+    public var volume: CGFloat = 0
+    public var gasAmmount: CGFloat = 0
     
-    override func prepare(body: Body)
+    override public func prepare(body: Body)
     {
-        normalList = [Vector2](count: body.pointMasses.count, repeatedValue: Vector2());
-        edgeLengthList = [CGFloat](count: body.pointMasses.count, repeatedValue: 0);
+        
     }
     
-    override func accumulateInternalForces()
+    override public func accumulateInternalForces()
     {
-        super.accumulateInternalForces();
-        // internal forces based on pressure equations.  we need 2 loops to do this.  one to find the overall volume of the
-        // body, and 1 to apply forces. we will need the normals for the edges in both loops, so we will cache them and remember them.
-        volume = 0;
+        super.accumulateInternalForces()
         
-        var edge1NX: CGFloat, edge1NY: CGFloat, edge2NX: CGFloat, edge2NY: CGFloat, t: CGFloat;
-        var normX: CGFloat, normY: CGFloat;
+        volume = 0
         
-        let c = body.pointMasses.count;
-        var prev = c - 1;
+        let c = body.pointMasses.count
         
-        for (i, curPoint) in enumerate(body.pointMasses)
+        if(c < 1)
         {
-            let next = (i + 1) % (c);
-            
-            // currently we are talking about the edge from i --> j.
-            // first calculate the volume of the body, and cache normals as we go.
-            let edge1N = (curPoint.position - body.pointMasses[prev].position).perpendicular();
-            let edge2N = (body.pointMasses[next].position - curPoint.position).perpendicular();
-            
-            // cache normal and edge length
-            normalList[i] = (edge1N + edge2N).normalized();
-            edgeLengthList[i] = edge2N.magnitude();
-            
-            prev = i;
+            return
         }
         
-        volume = max(0.5, polygonArea(body.pointMasses));
+        volume = max(0.5, polygonArea(body.pointMasses))
         
         // now loop through, adding forces!
-        let invVolume = 1 / volume;
+        let invVolume = 1 / volume
         
-        for (i, edgeLength) in enumerate(edgeLengthList)
+        for (i, e) in body.edges.enumerate()
         {
-            let j = (i + 1) % c;
-            let pressureV = (invVolume * edgeLength * (gasAmmount));
+            let j = (i + 1) % c
+            let pressureV = (invVolume * e.length * gasAmmount)
             
-            body.pointMasses[i].force += normalList[i] * pressureV;
-            body.pointMasses[j].force += normalList[j] * pressureV;
+            body.pointMasses[i].applyForce(body.pointNormals[i] * pressureV)
+            body.pointMasses[j].applyForce(body.pointNormals[j] * pressureV)
         }
     }
 }
 
 // Creator for the Spring component
-class PressureComponentCreator : BodyComponentCreator
+public class PressureComponentCreator : BodyComponentCreator
 {
-    var gasAmmount: CGFloat;
+    public var gasAmmount: CGFloat
     
-    required init(gasAmmount: CGFloat = 0)
+    public required init(gasAmmount: CGFloat = 0)
     {
-        self.gasAmmount = gasAmmount;
+        self.gasAmmount = gasAmmount
         
-        super.init();
+        super.init()
         
-        self.bodyComponentClass = PressureComponent.self;
+        bodyComponentClass = PressureComponent.self
     }
     
-    override func prepareBodyAfterComponent(body: Body)
+    public override func prepareBodyAfterComponent(body: Body)
     {
-        if let comp = body.getComponentType(PressureComponent)
-        {
-            comp.gasAmmount = self.gasAmmount;
-        }
+        body.getComponentType(PressureComponent)?.gasAmmount = gasAmmount
     }
 }

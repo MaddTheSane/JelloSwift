@@ -6,224 +6,226 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 /// Represents a Spring component that can be added to a body to include spring-based physics in the body's point masses
-class SpringComponent: BodyComponent
+public final class SpringComponent: BodyComponent
 {
     /// Gets the count of springs on this spring component
-    var springCount: Int { return springs.count; }
+    public var springCount: Int { return springs.count }
     
     /// The list of internal springs for the body
-    private var springs:[InternalSpring] = [];
+    private var springs: [InternalSpring] = []
     /// Whether the shape matching is on - turning on shape matching will make the soft body try to mantain its original
     /// shape as specified by its baseShape
-    private var shapeMatchingOn = true;
+    private var shapeMatchingOn = true
     
     /// The spring constant for the edges of the spring body
-    private var edgeSpringK: CGFloat = 50;
+    private var edgeSpringK: CGFloat = 50
     /// The spring dampness for the edges of the spring body
-    private var edgeSpringDamp: CGFloat = 2;
+    private var edgeSpringDamp: CGFloat = 2
     
     /// The spring constant for the shape matching of the body - ignored if shape matching is off
-    private var shapeSpringK: CGFloat = 200;
+    private var shapeSpringK: CGFloat = 200
     /// The spring dampness for the shape matching of the body - ignored if the shape matching is off
-    private var shapeSpringDamp: CGFloat = 10;
+    private var shapeSpringDamp: CGFloat = 10
     
-    override func prepare(body: Body)
+    override public func prepare(body: Body)
     {
-        self._buildDefaultSprings();
+        clearAllSprings()
     }
     
     /// Adds an internal spring to this body
-    func addInternalSpring(pointA: Int, pointB: Int, springK: CGFloat, damping: CGFloat, dist: CGFloat = -1) -> InternalSpring
+    public func addInternalSpring(pointA: Int, pointB: Int, springK: CGFloat, damping: CGFloat, dist: CGFloat = -1) -> InternalSpring
     {
-        var d = dist;
-        
-        if(d < 0)
+        var dist = dist
+        if(dist < 0)
         {
-            d = body.pointMasses[pointA].position.distanceTo(body.pointMasses[pointB].position);
+            dist = body.pointMasses[pointA].position.distanceTo(body.pointMasses[pointB].position)
         }
         
-        var s = InternalSpring(body.pointMasses[pointA], body.pointMasses[pointB], d, springK, damping);
+        let s = InternalSpring(body.pointMasses[pointA], body.pointMasses[pointB], dist, springK, damping)
         
-        springs += s;
+        springs += s
         
-        return s;
+        return s
     }
     
     /// Clears all the internal springs from the body.
     /// The original edge springs are mantained
-    func clearAllSprings()
+    public func clearAllSprings()
     {
-        springs = [];
+        springs = []
         
-        _buildDefaultSprings();
+        _buildDefaultSprings()
     }
     
     /// Builds the default edge internal springs for this spring body
-    func _buildDefaultSprings()
+    public func _buildDefaultSprings()
     {
         for i in 0..<body.pointMasses.count
         {
-            addInternalSpring(i, pointB: (i + 1) % body.pointMasses.count, springK: edgeSpringK, damping: edgeSpringDamp);
+            addInternalSpring(i, pointB: (i + 1) % body.pointMasses.count, springK: edgeSpringK, damping: edgeSpringDamp)
         }
     }
     
     /// Sets the shape-matching spring constants
-    func setShapeMatchingConstants(springK: CGFloat, _ damping: CGFloat)
+    public func setShapeMatchingConstants(springK: CGFloat, _ damping: CGFloat)
     {
-        shapeSpringK = springK;
-        shapeSpringDamp = damping;
+        shapeSpringK = springK
+        shapeSpringDamp = damping
     }
     
     /// Changes the spring constants for the springs around the shape itself (edge springs)
-    func setEdgeSpringConstants(edgeSpringK: CGFloat, _ edgeSpringDamp: CGFloat)
+    public func setEdgeSpringConstants(edgeSpringK: CGFloat, _ edgeSpringDamp: CGFloat)
     {
         // we know that the first n springs in the list are the edge springs.
         for i in 0..<body.pointMasses.count
         {
-            springs[i].springK = edgeSpringK;
-            springs[i].springD = edgeSpringDamp;
+            springs[i].springK = edgeSpringK
+            springs[i].springD = edgeSpringDamp
         }
     }
     
     /// Sets the spring constant for the given spring index.
     /// The spring index starts from pointMasses.count and onwards, so the first spring
     /// will not be the first edge spring.
-    func setSpringConstants(springID: Int, _ springK: CGFloat, _ springDamp: CGFloat)
+    public func setSpringConstants(springID: Int, _ springK: CGFloat, _ springDamp: CGFloat)
     {
         // index is for all internal springs, AFTER the default internal springs.
-        var index = body.pointMasses.count + springID;
+        let index = body.pointMasses.count + springID
         
-        springs[index].springK = springK;
-        springs[index].springD = springDamp;
+        springs[index].springK = springK
+        springs[index].springD = springDamp
     }
     
     /// Gets the spring constant of a spring at the specified index.
     /// This ignores the default edge springs, so the index is always + body.pointMasses.count
-    func getSpringK(springID: Int) -> CGFloat
+    public func getSpringK(springID: Int) -> CGFloat
     {
-        return springs[body.pointMasses.count + springID].springK;
+        return springs[body.pointMasses.count + springID].springK
     }
     
     /// Gets the spring dampness of a spring at the specified index
     /// This ignores the default edge springs, so the index is always + body.pointMasses.count
-    func getSpringD(springID: Int) -> CGFloat
+    public func getSpringD(springID: Int) -> CGFloat
     {
-        return springs[body.pointMasses.count + springID].springD;
+        return springs[body.pointMasses.count + springID].springD
     }
     
-    override func accumulateInternalForces()
+    override public func accumulateInternalForces()
     {
-        super.accumulateInternalForces();
-        
-        var force = Vector2();
+        super.accumulateInternalForces()
         
         for s in springs
         {
-            let p1 = s.pointMassA;
-            let p2 = s.pointMassB;
+            let p1 = s.pointMassA
+            let p2 = s.pointMassB
             
-            let force = calculateSpringForce(p1.position, p1.velocity, p2.position, p2.velocity, s.distance, s.springK, s.springD);
+            let force = calculateSpringForce(p1.position, velA: p1.velocity, posB: p2.position, velB: p2.velocity, distance: s.distance, springK: s.springK, springD: s.springD)
             
-            p1.force += force;
-            p2.force -= force;
+            p1.force += force
+            p2.force -= force
         }
         
-        if(shapeMatchingOn && shapeSpringK > 0)
+        if(!shapeMatchingOn || shapeSpringK == 0)
         {
-            body.baseShape.transformVertices(&body.globalShape, worldPos: body.derivedPos, angleInRadians: body.derivedAngle, localScale: body.scale);
+            return
+        }
+        
+        body.baseShape.transformVertices(&body.globalShape, worldPos: body.derivedPos, angleInRadians: body.derivedAngle, localScale: body.scale)
+        
+        for (i, p) in body.pointMasses.enumerate()
+        {
+            let force: Vector2
             
-            for (i, p) in enumerate(body.pointMasses)
+            if(!body.isKinematic)
             {
-                if(!body.isKinematic)
-                {
-                    force = calculateSpringForce(p.position, p.velocity, body.globalShape[i], p.velocity, 0.0, shapeSpringK, shapeSpringDamp);
-                }
-                else
-                {
-                    force = calculateSpringForce(p.position, p.velocity, body.globalShape[i], Vector2.Zero, 0.0, shapeSpringK, shapeSpringDamp);
-                }
-                
-                p.force += force;
+                force = calculateSpringForce(p.position, velA: p.velocity, posB: body.globalShape[i], velB: p.velocity, distance: 0.0, springK: shapeSpringK, springD: shapeSpringDamp)
             }
+            else
+            {
+                force = calculateSpringForce(p.position, velA: p.velocity, posB: body.globalShape[i], velB: Vector2.Zero, distance: 0.0, springK: shapeSpringK, springD: shapeSpringDamp)
+            }
+            
+            p.force += force
         }
     }
 }
 
 /// Creator for the Spring component
-class SpringComponentCreator : BodyComponentCreator
+public class SpringComponentCreator : BodyComponentCreator
 {
     /// Whether the shape matching is on - turning on shape matching will make the soft body try to mantain its original
     /// shape as specified by its baseShape
-    var shapeMatchingOn = true;
+    public var shapeMatchingOn = true
     
     /// The spring constant for the edges of the spring body
-    var edgeSpringK: CGFloat = 50;
+    public var edgeSpringK: CGFloat = 50
     /// The spring dampness for the edges of the spring body
-    var edgeSpringDamp: CGFloat = 2;
+    public var edgeSpringDamp: CGFloat = 2
     
     /// The spring constant for the shape matching of the body - ignored if shape matching is off
-    var shapeSpringK: CGFloat = 200;
+    public var shapeSpringK: CGFloat = 200
     /// The spring dampness for the shape matching of the body - ignored if the shape matching is off
-    var shapeSpringDamp: CGFloat = 10;
+    public var shapeSpringDamp: CGFloat = 10
     
     /// An array of inner springs for a body
-    var innerSprings: [SpringComponentInnerSpring] = [];
+    public var innerSprings: [SpringComponentInnerSpring] = []
     
-    required init(shapeMatchingOn: Bool = true, edgeSpringK: CGFloat = 50, edgeSpringDamp: CGFloat = 2, shapeSpringK: CGFloat = 200, shapeSpringDamp: CGFloat = 10, innerSprings: [SpringComponentInnerSpring] = [])
+    public required init(shapeMatchingOn: Bool = true, edgeSpringK: CGFloat = 50, edgeSpringDamp: CGFloat = 2, shapeSpringK: CGFloat = 200, shapeSpringDamp: CGFloat = 10, innerSprings: [SpringComponentInnerSpring] = [])
     {
-        self.shapeMatchingOn = shapeMatchingOn;
+        self.shapeMatchingOn = shapeMatchingOn
         
-        self.edgeSpringK = edgeSpringK;
-        self.edgeSpringDamp = edgeSpringDamp;
+        self.edgeSpringK = edgeSpringK
+        self.edgeSpringDamp = edgeSpringDamp
         
-        self.shapeSpringK = shapeSpringK;
-        self.shapeSpringDamp = shapeSpringDamp;
+        self.shapeSpringK = shapeSpringK
+        self.shapeSpringDamp = shapeSpringDamp
         
-        self.innerSprings = innerSprings;
+        self.innerSprings = innerSprings
         
-        super.init();
+        super.init()
         
-        self.bodyComponentClass = SpringComponent.self;
+        bodyComponentClass = SpringComponent.self
     }
     
-    override func prepareBodyAfterComponent(body: Body)
+    public override func prepareBodyAfterComponent(body: Body)
     {
-        if let comp = body.getComponentType(SpringComponent)
-        {
-            comp.shapeMatchingOn = self.shapeMatchingOn;
-            
-            comp.setEdgeSpringConstants(edgeSpringK, edgeSpringDamp);
-            comp.setShapeMatchingConstants(shapeSpringK, shapeSpringDamp)
-            
-            innerSprings.forEach({ (element) -> Void in
-                comp.addInternalSpring(element.indexA, pointB: element.indexB, springK: element.springK, damping: element.springD, dist: element.dist);
-            });
+        guard let comp = body.getComponentType(SpringComponent) else {
+            return
+        }
+        
+        comp.shapeMatchingOn = shapeMatchingOn
+        
+        comp.setEdgeSpringConstants(edgeSpringK, edgeSpringDamp)
+        comp.setShapeMatchingConstants(shapeSpringK, shapeSpringDamp)
+        
+        innerSprings.forEach{ element in
+            comp.addInternalSpring(element.indexA, pointB: element.indexB, springK: element.springK, damping: element.springD, dist: element.dist)
         }
     }
 }
 
 /// Specifies a template for an inner spring
-struct SpringComponentInnerSpring
+public struct SpringComponentInnerSpring
 {
-    var indexA: Int = 0;
-    var indexB: Int = 0;
+    public var indexA = 0
+    public var indexB = 0
     
-    var springK: CGFloat = 0;
-    var springD: CGFloat = 0;
+    public var springK: CGFloat = 0
+    public var springD: CGFloat = 0
     
-    var dist: CGFloat = 0;
+    public var dist: CGFloat = 0
     
-    init(a: Int, b: Int, springK: CGFloat, springD: CGFloat, dist: CGFloat = -1)
+    public init(a: Int, b: Int, springK: CGFloat, springD: CGFloat, dist: CGFloat = -1)
     {
-        indexA = a;
-        indexB = b;
+        indexA = a
+        indexB = b
         
-        self.springK = springK;
-        self.springD = springD;
+        self.springK = springK
+        self.springD = springD
         
-        self.dist = dist;
+        self.dist = dist
     }
 }

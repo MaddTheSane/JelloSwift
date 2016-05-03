@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0414E781A9503ED0031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
-		A0414E791A9508850031866D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414E771A9503ED0031866D /* CustomView.swift */; };
+		A027EE611AD1EF1900E849AC /* BodyEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027EE601AD1EF1900E849AC /* BodyEdge.swift */; };
+		A027EE621AD1EF1900E849AC /* BodyEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027EE601AD1EF1900E849AC /* BodyEdge.swift */; };
+		A027EE631AD2073900E849AC /* BodyEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027EE601AD1EF1900E849AC /* BodyEdge.swift */; };
+		A03231251B4863CB00D725ED /* SpriteKitPolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */; };
 		A0510AED1AAA341C00C03017 /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AEC1AAA341C00C03017 /* BodyJoint.swift */; };
 		A0510AEF1AAA404300C03017 /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AEC1AAA341C00C03017 /* BodyJoint.swift */; };
 		A0510AF11AAA41D700C03017 /* PointJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF01AAA41D700C03017 /* PointJointLink.swift */; };
@@ -22,18 +24,23 @@
 		A0510AFD1AAA543E00C03017 /* SpringBodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */; };
 		A0510B011AAA573B00C03017 /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
 		A0510B021AAA573B00C03017 /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
+		A0512D281AEA25AA00B0B87F /* CollisionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */; };
+		A0512D291AEA25AA00B0B87F /* CollisionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */; };
 		A05ECD5319B1A38C00F84326 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
 		A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
 		A05ECD5519B1A6D700F84326 /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
 		A05ECD5619B1A6D700F84326 /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A05ECD5719B1A6D700F84326 /* GravityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ECD5219B1A38C00F84326 /* GravityComponent.swift */; };
+		A06733541B4DA51E00E54020 /* AABBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06733531B4DA51E00E54020 /* AABBTests.swift */; };
+		A06733551B4DA5CD00E54020 /* CollisionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */; };
+		A06733561B4DA5EC00E54020 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
+		A06733571B4DA5EE00E54020 /* SpriteKitPolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */; };
 		A06EC14D199FD49200402D4C /* SpringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14C199FD49200402D4C /* SpringComponent.swift */; };
 		A06EC14F199FD4EE00402D4C /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
 		A06EC151199FDB2300402D4C /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A07D54711997E4EE003C9669 /* PointMassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D54701997E4EE003C9669 /* PointMassTests.swift */; };
 		A081CFE21996B04D00C7CA49 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
 		A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */; };
-		A09CC4961A251A880073BB62 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EE199329130066F88F /* GameScene.swift */; };
 		A09CC4971A251A880073BB62 /* AABB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95510199336460066F88F /* AABB.swift */; };
 		A09CC4981A251A880073BB62 /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
 		A09CC4991A251A880073BB62 /* GeomUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553519946BA00066F88F /* GeomUtils.swift */; };
@@ -46,22 +53,24 @@
 		A09CC4A01A251A880073BB62 /* PressureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC150199FDB2300402D4C /* PressureComponent.swift */; };
 		A09CC4A11A251A880073BB62 /* PolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */; };
 		A09CC4A21A251A880073BB62 /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
-		A09CC4A31A251A880073BB62 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954F0199329130066F88F /* GameViewController.swift */; };
 		A09CC4A41A251A880073BB62 /* BodyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EC14E199FD4EE00402D4C /* BodyComponent.swift */; };
 		A09CC4A51A251A880073BB62 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552B1993BC150066F88F /* Body.swift */; };
 		A09CC4A61A251A880073BB62 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95525199344390066F88F /* Utils.swift */; };
 		A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C955281993BB360066F88F /* MaterialPair.swift */; };
-		A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
 		A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EA199329130066F88F /* AppDelegate.swift */; };
 		A09CC4AA1A251A880073BB62 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9552E1993BFA50066F88F /* World.swift */; };
 		A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
 		A09CC4AE1A251A880073BB62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
-		A09CC4AF1A251A880073BB62 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0C954EC199329130066F88F /* GameScene.sks */; };
 		A09CC4B01A251A880073BB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F2199329130066F88F /* Main.storyboard */; };
+		A0A4B4D31AC6405B0097AFDC /* SpringBodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */; };
+		A0A4B4D41AC6405E0097AFDC /* BodyJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AEC1AAA341C00C03017 /* BodyJoint.swift */; };
+		A0A4B4D71AC640640097AFDC /* BodyJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */; };
+		A0A4B4D81AC640640097AFDC /* ShapeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510B001AAA573B00C03017 /* ShapeJointLink.swift */; };
+		A0A4B4DA1AC6406C0097AFDC /* PointJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF01AAA41D700C03017 /* PointJointLink.swift */; };
+		A0A4B4DB1AC6406C0097AFDC /* EdgeJointLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */; };
+		A0B015711AD1D57E00340465 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B015701AD1D57E00340465 /* DemoViewController.swift */; };
+		A0B015721AD1D57E00340465 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B015701AD1D57E00340465 /* DemoViewController.swift */; };
 		A0C954EB199329130066F88F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EA199329130066F88F /* AppDelegate.swift */; };
-		A0C954ED199329130066F88F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A0C954EC199329130066F88F /* GameScene.sks */; };
-		A0C954EF199329130066F88F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954EE199329130066F88F /* GameScene.swift */; };
-		A0C954F1199329130066F88F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C954F0199329130066F88F /* GameViewController.swift */; };
 		A0C954F4199329130066F88F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F2199329130066F88F /* Main.storyboard */; };
 		A0C954F6199329130066F88F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C954F5199329130066F88F /* Images.xcassets */; };
 		A0C95502199329130066F88F /* JelloSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95501199329130066F88F /* JelloSwiftTests.swift */; };
@@ -73,8 +82,6 @@
 		A0C9551819933ADA0066F88F /* PointMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9550E199333D30066F88F /* PointMass.swift */; };
 		A0C9551A19933D9B0066F88F /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
 		A0C9551B199340060066F88F /* Bitmask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551919933D9B0066F88F /* Bitmask.swift */; };
-		A0C9551D199340BD0066F88F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
-		A0C9551E199340BD0066F88F /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551C199340BD0066F88F /* Vector3.swift */; };
 		A0C95520199342D10066F88F /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
 		A0C95521199342D10066F88F /* InternalSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9551F199342D10066F88F /* InternalSpring.swift */; };
 		A0C95523199343DF0066F88F /* ClosedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C95522199343DF0066F88F /* ClosedShape.swift */; };
@@ -94,6 +101,7 @@
 		A0C9553D1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		A0C9553E1995C2590066F88F /* RenderingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553C1995C2590066F88F /* RenderingSettings.swift */; };
 		A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */; };
+		A0E336071B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0414E771A9503ED0031866D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A027EE601AD1EF1900E849AC /* BodyEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyEdge.swift; sourceTree = "<group>"; };
 		A0510AEC1AAA341C00C03017 /* BodyJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyJoint.swift; sourceTree = "<group>"; };
 		A0510AF01AAA41D700C03017 /* PointJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointJointLink.swift; sourceTree = "<group>"; };
 		A0510AF21AAA466D00C03017 /* EdgeJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeJointLink.swift; sourceTree = "<group>"; };
@@ -129,41 +137,41 @@
 		A0510AF81AAA4FED00C03017 /* BodyJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyJointLink.swift; sourceTree = "<group>"; };
 		A0510AFB1AAA543E00C03017 /* SpringBodyJoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringBodyJoint.swift; sourceTree = "<group>"; };
 		A0510B001AAA573B00C03017 /* ShapeJointLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeJointLink.swift; sourceTree = "<group>"; };
+		A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionObserver.swift; sourceTree = "<group>"; };
 		A05ECD5219B1A38C00F84326 /* GravityComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityComponent.swift; sourceTree = "<group>"; };
+		A06733531B4DA51E00E54020 /* AABBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AABBTests.swift; sourceTree = "<group>"; };
 		A06EC14C199FD49200402D4C /* SpringComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringComponent.swift; sourceTree = "<group>"; };
 		A06EC14E199FD4EE00402D4C /* BodyComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyComponent.swift; sourceTree = "<group>"; };
-		A06EC150199FDB2300402D4C /* PressureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressureComponent.swift; sourceTree = "<group>"; };
+		A06EC150199FDB2300402D4C /* PressureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PressureComponent.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A07D54701997E4EE003C9669 /* PointMassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointMassTests.swift; sourceTree = "<group>"; };
 		A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolyDrawer.swift; sourceTree = "<group>"; };
 		A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedShapeTests.swift; sourceTree = "<group>"; };
 		A09CC4B41A251A880073BB62 /* JelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09CC4B51A251A880073BB62 /* JelloSwiftStressTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JelloSwiftStressTest-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A0B015701AD1D57E00340465 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A0C954E5199329130066F88F /* JelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C954E9199329130066F88F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0C954EA199329130066F88F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0C954EC199329130066F88F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		A0C954EE199329130066F88F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		A0C954F0199329130066F88F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A0C954F3199329130066F88F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0C954F5199329130066F88F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0C954FB199329130066F88F /* JelloSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JelloSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C95500199329130066F88F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0C95501199329130066F88F /* JelloSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JelloSwiftTests.swift; sourceTree = "<group>"; };
+		A0C95501199329130066F88F /* JelloSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = JelloSwiftTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A0C9550C199329280066F88F /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
-		A0C9550E199333D30066F88F /* PointMass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointMass.swift; sourceTree = "<group>"; };
+		A0C9550E199333D30066F88F /* PointMass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PointMass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A0C95510199336460066F88F /* AABB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AABB.swift; sourceTree = "<group>"; };
 		A0C9551919933D9B0066F88F /* Bitmask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmask.swift; sourceTree = "<group>"; };
-		A0C9551C199340BD0066F88F /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		A0C9551F199342D10066F88F /* InternalSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalSpring.swift; sourceTree = "<group>"; };
 		A0C95522199343DF0066F88F /* ClosedShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedShape.swift; sourceTree = "<group>"; };
 		A0C95525199344390066F88F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A0C955281993BB360066F88F /* MaterialPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPair.swift; sourceTree = "<group>"; };
-		A0C9552B1993BC150066F88F /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
-		A0C9552E1993BFA50066F88F /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCollisionInformation.swift; sourceTree = "<group>"; };
+		A0C9552B1993BC150066F88F /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Body.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A0C9552E1993BFA50066F88F /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = World.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BodyCollisionInformation.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A0C9553519946BA00066F88F /* GeomUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeomUtils.swift; sourceTree = "<group>"; };
 		A0C9553C1995C2590066F88F /* RenderingSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderingSettings.swift; sourceTree = "<group>"; };
 		A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsMathTest.swift; sourceTree = "<group>"; };
+		A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitPolyDrawer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,14 @@
 			name = Joints;
 			sourceTree = "<group>";
 		};
+		A0512D261AEA256700B0B87F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		A06EC14B199FD47E00402D4C /* BodyComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */,
+				A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */,
 			);
 			name = DrawingUtils;
 			sourceTree = "<group>";
@@ -265,10 +282,7 @@
 				A081CFE01996B00200C7CA49 /* DrawingUtils */,
 				A0C9550B199329180066F88F /* Jello */,
 				A0C954EA199329130066F88F /* AppDelegate.swift */,
-				A0C954EC199329130066F88F /* GameScene.sks */,
-				A0C954EE199329130066F88F /* GameScene.swift */,
-				A0414E771A9503ED0031866D /* CustomView.swift */,
-				A0C954F0199329130066F88F /* GameViewController.swift */,
+				A0B015701AD1D57E00340465 /* DemoViewController.swift */,
 				A0C954F2199329130066F88F /* Main.storyboard */,
 				A0C954F5199329130066F88F /* Images.xcassets */,
 				A0C954E8199329130066F88F /* Supporting Files */,
@@ -288,6 +302,7 @@
 		A0C954FE199329130066F88F /* JelloSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				A06733531B4DA51E00E54020 /* AABBTests.swift */,
 				A0C95501199329130066F88F /* JelloSwiftTests.swift */,
 				A0C9553F19968CCA0066F88F /* PhysicsMathTest.swift */,
 				A07D54701997E4EE003C9669 /* PointMassTests.swift */,
@@ -309,13 +324,12 @@
 		A0C9550B199329180066F88F /* Jello */ = {
 			isa = PBXGroup;
 			children = (
+				A0512D261AEA256700B0B87F /* Protocols */,
 				A0510AEE1AAA342100C03017 /* Joints */,
 				A06EC14B199FD47E00402D4C /* BodyComponents */,
 				A0C955311993C3570066F88F /* Structs */,
 				A0C9552E1993BFA50066F88F /* World.swift */,
 				A0C9552B1993BC150066F88F /* Body.swift */,
-				A0C95522199343DF0066F88F /* ClosedShape.swift */,
-				A0C95510199336460066F88F /* AABB.swift */,
 				A0C9550E199333D30066F88F /* PointMass.swift */,
 				A0C9553519946BA00066F88F /* GeomUtils.swift */,
 				A0C95525199344390066F88F /* Utils.swift */,
@@ -327,12 +341,14 @@
 		A0C955311993C3570066F88F /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				A0C95522199343DF0066F88F /* ClosedShape.swift */,
+				A0C95510199336460066F88F /* AABB.swift */,
 				A0C9551F199342D10066F88F /* InternalSpring.swift */,
 				A0C955281993BB360066F88F /* MaterialPair.swift */,
 				A0C9550C199329280066F88F /* Vector2.swift */,
-				A0C9551C199340BD0066F88F /* Vector3.swift */,
 				A0C9551919933D9B0066F88F /* Bitmask.swift */,
 				A0C955321993C37C0066F88F /* BodyCollisionInformation.swift */,
+				A027EE601AD1EF1900E849AC /* BodyEdge.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -400,12 +416,12 @@
 		A0C954DD199329130066F88F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Luiz Fernando Silva";
 				TargetAttributes = {
 					A0C954E4199329130066F88F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 2E2NEW4A56;
 					};
 					A0C954FA199329130066F88F = {
 						CreatedOnToolsVersion = 6.0;
@@ -439,7 +455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A09CC4AE1A251A880073BB62 /* Images.xcassets in Resources */,
-				A09CC4AF1A251A880073BB62 /* GameScene.sks in Resources */,
 				A09CC4B01A251A880073BB62 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C954F6199329130066F88F /* Images.xcassets in Resources */,
-				A0C954ED199329130066F88F /* GameScene.sks in Resources */,
 				A0C954F4199329130066F88F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +482,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A09CC4961A251A880073BB62 /* GameScene.swift in Sources */,
 				A09CC4971A251A880073BB62 /* AABB.swift in Sources */,
 				A09CC4981A251A880073BB62 /* PointMass.swift in Sources */,
 				A0510AF61AAA4BCC00C03017 /* EdgeJointLink.swift in Sources */,
@@ -477,8 +490,9 @@
 				A09CC49B1A251A880073BB62 /* RenderingSettings.swift in Sources */,
 				A09CC49C1A251A880073BB62 /* Vector2.swift in Sources */,
 				A0510B021AAA573B00C03017 /* ShapeJointLink.swift in Sources */,
+				A027EE621AD1EF1900E849AC /* BodyEdge.swift in Sources */,
 				A09CC49D1A251A880073BB62 /* SpringComponent.swift in Sources */,
-				A0414E791A9508850031866D /* CustomView.swift in Sources */,
+				A03231251B4863CB00D725ED /* SpriteKitPolyDrawer.swift in Sources */,
 				A09CC49E1A251A880073BB62 /* InternalSpring.swift in Sources */,
 				A09CC49F1A251A880073BB62 /* GravityComponent.swift in Sources */,
 				A09CC4A01A251A880073BB62 /* PressureComponent.swift in Sources */,
@@ -486,16 +500,16 @@
 				A0510AEF1AAA404300C03017 /* BodyJoint.swift in Sources */,
 				A09CC4A11A251A880073BB62 /* PolyDrawer.swift in Sources */,
 				A09CC4A21A251A880073BB62 /* Bitmask.swift in Sources */,
-				A09CC4A31A251A880073BB62 /* GameViewController.swift in Sources */,
 				A0510AFA1AAA4FED00C03017 /* BodyJointLink.swift in Sources */,
 				A09CC4A41A251A880073BB62 /* BodyComponent.swift in Sources */,
 				A09CC4A51A251A880073BB62 /* Body.swift in Sources */,
 				A09CC4A61A251A880073BB62 /* Utils.swift in Sources */,
 				A09CC4A71A251A880073BB62 /* MaterialPair.swift in Sources */,
-				A09CC4A81A251A880073BB62 /* Vector3.swift in Sources */,
+				A0512D291AEA25AA00B0B87F /* CollisionObserver.swift in Sources */,
 				A09CC4A91A251A880073BB62 /* AppDelegate.swift in Sources */,
 				A09CC4AA1A251A880073BB62 /* World.swift in Sources */,
 				A09CC4AB1A251A880073BB62 /* ClosedShape.swift in Sources */,
+				A0B015721AD1D57E00340465 /* DemoViewController.swift in Sources */,
 				A0510AF71AAA4C9000C03017 /* PointJointLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C954EF199329130066F88F /* GameScene.swift in Sources */,
 				A0C95511199336460066F88F /* AABB.swift in Sources */,
 				A0C9550F199333D30066F88F /* PointMass.swift in Sources */,
 				A0C9553619946BA00066F88F /* GeomUtils.swift in Sources */,
@@ -513,8 +526,9 @@
 				A0C9550D199329280066F88F /* Vector2.swift in Sources */,
 				A0510AF31AAA466D00C03017 /* EdgeJointLink.swift in Sources */,
 				A0510B011AAA573B00C03017 /* ShapeJointLink.swift in Sources */,
+				A027EE611AD1EF1900E849AC /* BodyEdge.swift in Sources */,
 				A06EC14D199FD49200402D4C /* SpringComponent.swift in Sources */,
-				A0414E781A9503ED0031866D /* CustomView.swift in Sources */,
+				A0E336071B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift in Sources */,
 				A0C95520199342D10066F88F /* InternalSpring.swift in Sources */,
 				A05ECD5319B1A38C00F84326 /* GravityComponent.swift in Sources */,
 				A0510AF11AAA41D700C03017 /* PointJointLink.swift in Sources */,
@@ -524,14 +538,14 @@
 				A081CFE21996B04D00C7CA49 /* PolyDrawer.swift in Sources */,
 				A0C9551A19933D9B0066F88F /* Bitmask.swift in Sources */,
 				A0510AF91AAA4FED00C03017 /* BodyJointLink.swift in Sources */,
-				A0C954F1199329130066F88F /* GameViewController.swift in Sources */,
 				A06EC14F199FD4EE00402D4C /* BodyComponent.swift in Sources */,
 				A0C9552C1993BC150066F88F /* Body.swift in Sources */,
 				A0C95526199344390066F88F /* Utils.swift in Sources */,
+				A0512D281AEA25AA00B0B87F /* CollisionObserver.swift in Sources */,
 				A0C955291993BB360066F88F /* MaterialPair.swift in Sources */,
-				A0C9551D199340BD0066F88F /* Vector3.swift in Sources */,
 				A0C954EB199329130066F88F /* AppDelegate.swift in Sources */,
 				A0C9552F1993BFA50066F88F /* World.swift in Sources */,
+				A0B015711AD1D57E00340465 /* DemoViewController.swift in Sources */,
 				A0C95523199343DF0066F88F /* ClosedShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A4B4D81AC640640097AFDC /* ShapeJointLink.swift in Sources */,
 				A05ECD5419B1A6D700F84326 /* BodyComponent.swift in Sources */,
 				A05ECD5519B1A6D700F84326 /* SpringComponent.swift in Sources */,
 				A05ECD5619B1A6D700F84326 /* PressureComponent.swift in Sources */,
@@ -550,16 +565,25 @@
 				A0C9551619933ADA0066F88F /* AABB.swift in Sources */,
 				A07D54711997E4EE003C9669 /* PointMassTests.swift in Sources */,
 				A0C9552A1993BB360066F88F /* MaterialPair.swift in Sources */,
+				A0A4B4DB1AC6406C0097AFDC /* EdgeJointLink.swift in Sources */,
 				A0C95527199344390066F88F /* Utils.swift in Sources */,
 				A08E5FA31AA8B56700F4CA0F /* ClosedShapeTests.swift in Sources */,
+				A027EE631AD2073900E849AC /* BodyEdge.swift in Sources */,
 				A0C9551719933ADA0066F88F /* Vector2.swift in Sources */,
+				A0A4B4D71AC640640097AFDC /* BodyJointLink.swift in Sources */,
+				A0A4B4D31AC6405B0097AFDC /* SpringBodyJoint.swift in Sources */,
 				A0C955301993BFA50066F88F /* World.swift in Sources */,
 				A0C9554019968CCA0066F88F /* PhysicsMathTest.swift in Sources */,
+				A06733561B4DA5EC00E54020 /* PolyDrawer.swift in Sources */,
 				A0C9551819933ADA0066F88F /* PointMass.swift in Sources */,
+				A06733551B4DA5CD00E54020 /* CollisionObserver.swift in Sources */,
+				A0A4B4DA1AC6406C0097AFDC /* PointJointLink.swift in Sources */,
 				A0C95521199342D10066F88F /* InternalSpring.swift in Sources */,
-				A0C9551E199340BD0066F88F /* Vector3.swift in Sources */,
 				A0C95502199329130066F88F /* JelloSwiftTests.swift in Sources */,
 				A0C955341993C37C0066F88F /* BodyCollisionInformation.swift in Sources */,
+				A06733571B4DA5EE00E54020 /* SpriteKitPolyDrawer.swift in Sources */,
+				A06733541B4DA51E00E54020 /* AABBTests.swift in Sources */,
+				A0A4B4D41AC6405E0097AFDC /* BodyJoint.swift in Sources */,
 				A0510AF51AAA4B4500C03017 /* GeomUtilsTests.swift in Sources */,
 				A0C95524199343DF0066F88F /* ClosedShape.swift in Sources */,
 				A0C9553719946BA00066F88F /* GeomUtils.swift in Sources */,
@@ -606,10 +630,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = "JelloSwiftStressTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwiftStress;
 				PRODUCT_NAME = JelloSwift;
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -622,10 +648,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = "JelloSwiftStressTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwiftStress;
 				PRODUCT_NAME = JelloSwift;
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -650,6 +678,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -721,6 +750,8 @@
 				INFOPLIST_FILE = JelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -736,6 +767,8 @@
 				INFOPLIST_FILE = JelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -755,6 +788,7 @@
 				);
 				INFOPLIST_FILE = JelloSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "luizfernandosilva.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -770,6 +804,7 @@
 				);
 				INFOPLIST_FILE = JelloSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "luizfernandosilva.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};

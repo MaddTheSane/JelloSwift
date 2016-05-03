@@ -10,90 +10,148 @@ import Foundation
 import CoreGraphics
 
 /// Represents a joint link that links to multiple point masses of a body
-class ShapeJointLink: JointLinkType
+public class ShapeJointLink: JointLinkType
 {
-    /// The body that this joint link is linked to
-    private var _body: Body;
-    
     /// The point masses this joint is linked to
-    private var _pointMasses: [PointMass];
+    private let _pointMasses: [PointMass]
+    
+    /// The indices of this shape joint link
+    private let _indices: [Int]
     
     /// Gets the body that this joint link is linked to
-    var body: Body { return _body; }
+    public private(set) var body: Body
     
     /// Gets the type of joint this joint link represents
-    var linkType: LinkType { return LinkType.Point }
+    public let linkType = LinkType.Shape
     
-    /// Inits a new point joint link with the specified parameters
-    init(body: Body, pointMassIndexes: [Int])
-    {
-        _body = body;
-        _pointMasses = [];
-        
-        for i in 0..<pointMassIndexes.count
-        {
-            _pointMasses += _body.pointMasses[i];
-        }
-    }
+    /// The offset to apply to the position of this shape joint, in body coordinates
+    public var offset = Vector2.Zero
     
     /// Gets the position, in world coordinates, at which this joint links with the underlying body
-    func getPosition() -> Vector2
+    public var position: Vector2
     {
-        var center = Vector2.Zero;
+        var center = Vector2.Zero
         
         for p in _pointMasses
         {
-            center += p.position;
+            center += p.position
         }
         
-        center /= _pointMasses.count;
+        center /= _pointMasses.count
+        center += offsetPosition
         
-        return center;
+        return center
+    }
+    
+    /// Offset position, calculated based on the owning body's angle
+    private var offsetPosition: Vector2
+    {
+        if(offset == Vector2.Zero)
+        {
+            return Vector2.Zero
+        }
+        
+        return rotateVector(offset, angleInRadians: body.derivedAngle)
     }
     
     /// Gets the velocity of the object this joint links to
-    func getVelocity() -> Vector2
+    public var velocity: Vector2
     {
-        var totalVel = Vector2.Zero;
+        var totalVel = Vector2.Zero
         
         for p in _pointMasses
         {
-            totalVel += p.velocity;
+            totalVel += p.velocity
         }
         
-        totalVel /= _pointMasses.count;
+        totalVel /= _pointMasses.count
         
-        return totalVel;
+        return totalVel
     }
     
     /// Gets the total mass of the subject of this joint link
-    func getMass() -> CGFloat
+    public var mass: CGFloat
     {
-        return _pointMasses.reduce(0, combine: { $0 + $1.mass });
+        return _pointMasses.reduce(0, combine: { $0 + $1.mass })
     }
     
     /// Gets a value specifying whether the object referenced by this JointLinkType is static
-    func isStatic() -> Bool
+    public var isStatic: Bool
     {
         for p in _pointMasses
         {
             if(!isinf(p.mass))
             {
-                return false;
+                return false
             }
         }
         
-        return true;
+        return true
+    }
+    
+    /// Inits a new point joint link with the specified parameters
+    public init(body: Body, pointMassIndexes: [Int])
+    {
+        self.body = body
+        _pointMasses = pointMassIndexes.map { body.pointMasses[$0] }
+        _indices = pointMassIndexes
     }
     
     /// Appies a given force to the subject of this joint link
     ///
-    /// :param: force A force to apply to the subjects of this joint link
-    func applyForce(force: Vector2)
+    /// - parameter force: A force to apply to the subjects of this joint link
+    public func applyForce(force: Vector2)
     {
+        let torqueF = offsetPosition =* force.perpendicular()
+        
         for p in _pointMasses
         {
-            p.applyForce(force);
+            let tempR = (p.position - position + offsetPosition).perpendicular()
+            
+            p.force += force + tempR * torqueF
         }
+    }
+    
+    // TODO: Implement the function below to derive the angle of the shape's angle
+    
+    /// Returns the average angle of the vertices of this ShapeJointLink, based on the body's original shape's vertices
+    private func angle() -> CGFloat
+    {
+        var angle: CGFloat = 0
+        
+        var originalSign = 1
+        var originalAngle: CGFloat = 0
+        
+        for i in _indices
+        {
+            let pm = body.pointMasses[i]
+            
+            let baseNorm = body.baseShape.localVertices[i].normalized()
+            let curNorm  = (pm.position - body.derivedPos).normalized()
+            
+            var thisAngle = atan2(baseNorm.X * curNorm.Y - baseNorm.Y * curNorm.X, baseNorm =* curNorm)
+            
+            if (i == 0)
+            {
+                originalSign = (thisAngle >= 0.0) ? 1 : -1
+                originalAngle = thisAngle
+            }
+            else
+            {
+                let diff = (thisAngle - originalAngle)
+                let thisSign = (thisAngle >= 0.0) ? 1 : -1
+                
+                if (abs(diff) > PI && (thisSign != originalSign))
+                {
+                    thisAngle = (thisSign == -1) ? (PI + (PI + thisAngle)) : ((PI - thisAngle) - PI)
+                }
+            }
+            
+            angle += thisAngle
+        }
+        
+        angle /= CGFloat(_pointMasses.count)
+        
+        return angle
     }
 }

@@ -9,62 +9,64 @@
 import Foundation
 import CoreGraphics
 
-func ==(lhs: BodyJoint, rhs: BodyJoint) -> Bool
+public func ==(lhs: BodyJoint, rhs: BodyJoint) -> Bool
 {
-    return lhs === rhs;
+    return lhs === rhs
 }
 
 /// Base class for joints which unites two separate bodies
-class BodyJoint: Equatable
+public class BodyJoint: Equatable
 {
     /// Gets the first link that contins informationa bout the first body linked by this joint
-    internal var _bodyLink1: JointLinkType;
+    internal let _bodyLink1: JointLinkType
     /// Gets the second link that contins informationa bout the first body linked by this joint
-    internal var _bodyLink2: JointLinkType;
+    internal let _bodyLink2: JointLinkType
     
     /// Whether to allow collisions between the two objects joined by this BodyJoint.
     /// Defaults to false
-    var allowCollisions: Bool = false;
+    public var allowCollisions = false
+    
+    /// Controls whether this valubody joint is enabled.
+    /// Disabling body joints disables all of the physics of the joint.
+    /// Note that collisions between bodies are still governed by .allowCollisions even if the joint is disabled
+    public var enabled = true
     
     /// Gets the first link that contins informationa bout the first body linked by this joint
-    var bodyLink1: JointLinkType { return _bodyLink1 }
+    public var bodyLink1: JointLinkType { return _bodyLink1 }
     /// Gets the second link that contins informationa bout the first body linked by this joint
-    var bodyLink2: JointLinkType { return _bodyLink2 }
+    public var bodyLink2: JointLinkType { return _bodyLink2 }
     
     /// Gets or sets the rest distance for this joint
-    var restDistance: CGFloat
+    public var restDistance: CGFloat
+    /// Gets or sets the maximum resting distance for this joint.
+    /// In case the maximum resting distance is different than the resting distance, the spring only applies
+    /// forces if the distance between the links is dist > restDistance && dist < maxRestDistance.
+    /// This value is automatically initialized to be the same as restDistance
+    public var maxRestDistance:CGFloat
     
-    init(world: World, link1: JointLinkType, link2: JointLinkType, distance: CGFloat = -1)
+    public init(world: World, link1: JointLinkType, link2: JointLinkType, distance: CGFloat = -1)
     {
-        _bodyLink1 = link1;
-        _bodyLink2 = link2;
+        _bodyLink1 = link1
+        _bodyLink2 = link2
         
         // Automatic distance calculation
-        if(distance == -1)
-        {
-            restDistance = link1.getPosition().distanceTo(link2.getPosition());
-        }
-        else
-        {
-            restDistance = distance;
-        }
-        
-        world.addJoint(self);
+        restDistance = distance >= 0 ? distance : link1.position.distanceTo(link2.position)
+        maxRestDistance = restDistance
     }
     
     /**
      * Resolves this joint
      *
-     * :param: dt The delta time to update the resolve on
+     * - parameter dt: The delta time to update the resolve on
      */
-    func resolve(dt: CGFloat)
+    public func resolve(dt: CGFloat)
     {
         
     }
 }
 
 /// Protocol to be implemented by objects that specify the way a joint links with a body
-protocol JointLinkType
+public protocol JointLinkType
 {
     /// Gets the body that this joint link is linked to
     var body: Body { get }
@@ -73,25 +75,25 @@ protocol JointLinkType
     var linkType: LinkType { get }
     
     /// Gets the position, in world coordinates, at which this joint links with the underlying body
-    func getPosition() -> Vector2;
+    var position: Vector2 { get }
     
     /// Gets the velocity of the object this joint links to
-    func getVelocity() -> Vector2;
+    var velocity: Vector2 { get }
     
     /// Gets the total mass of the subject of this joint link
-    func getMass() -> CGFloat;
+    var mass: CGFloat { get }
     
     /// Gets a value specifying whether the object referenced by this JointLinkType is static
-    func isStatic() -> Bool;
+    var isStatic: Bool { get }
     
     /// Appies a given force to the subject of this joint link
     ///
-    /// :param: force A force to apply to the subjects of this joint link
-    func applyForce(force: Vector2);
+    /// - parameter force: A force to apply to the subjects of this joint link
+    func applyForce(force: Vector2)
 }
 
 /// The type of joint link of a BodyJointLink class
-enum LinkType
+public enum LinkType
 {
     /// Specifies that the joint links at the whole body, relative to the center
     case Body

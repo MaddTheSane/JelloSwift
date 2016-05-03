@@ -6,82 +6,73 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
-// Contains a set of points that is equivalent as the internal shape of a sofy body
-class ClosedShape
+/// Contains a set of points that is equivalent as the internal shape of a sofy body
+public struct ClosedShape: ArrayLiteralConvertible
 {
-    var localVertices: [Vector2] = [];
+    public typealias Element = Vector2
     
-    // Start adding vertices to this closed shape.
-    // Calling this method will erase any existing verts
-    func begin()
+    private(set) public var localVertices: [Vector2] = []
+    
+    /// Returns the Vector2 for the vertex with a given integer index on this ClosedShape
+    public subscript(i: Int) -> Vector2 { return localVertices[i] }
+    
+    public init(arrayLiteral elements: ClosedShape.Element...)
     {
-        localVertices = [];
+        localVertices = elements
     }
     
-    // Adds a vertex to this closed shape
-    func addVertex(vertex: Vector2)
+    /// Start adding vertices to this closed shape.
+    /// Calling this method will erase any existing verts
+    public mutating func begin()
     {
-        localVertices += vertex;
+        localVertices = []
     }
     
-    // Finishes constructing this closed shape, and convert them to local space (by default)
-    func finish(recenter: Bool = true)
+    /// Adds a vertex to this closed shape
+    public mutating func addVertex(vertex: Vector2)
+    {
+        localVertices += vertex
+    }
+    
+    /// Adds a vertex to this closed shape
+    public mutating func addVertex(x x: CGFloat, y: CGFloat)
+    {
+        addVertex(Vector2(x, y))
+    }
+    
+    /// Finishes constructing this closed shape, and convert them to local space (by default)
+    public mutating func finish(recenter: Bool = true)
     {
         if(recenter)
         {
             // Find the average location of all the vertices
-            var center = Vector2.Zero;
+            let center = averageVectors(localVertices)
             
-            for vertex in localVertices
-            {
-                center += vertex;
-            }
-            
-            center /= localVertices.count;
-            
-            // Subtract the center from all the elements
-            for i in 0..<localVertices.count
-            {
-                localVertices[i] -= center;
-            }
+            localVertices = localVertices.map { $0 - center }
         }
     }
     
-    // Transforms all vertices by the given angle and scale
-    func transformOwn(angleInRadians: CGFloat, localScale: Vector2)
+    /// Transforms all vertices by the given angle and scale
+    public mutating func transformOwn(angleInRadians: CGFloat, localScale: Vector2)
     {
-        for i in 0..<localVertices.count
-        {
-            localVertices[i] = rotateVector(localVertices[i] * localScale, angleInRadians);
-        }
+        localVertices = localVertices.map { rotateVector($0 * localScale, angleInRadians: angleInRadians) }
     }
     
     /// Gets a new list of vertices, transformed by the given position, angle, and scale.
     /// transformation is applied in the following order:  scale -> rotation -> position.
-    func transformVertices(worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1)) -> [Vector2]
+    @warn_unused_result
+    public func transformVertices(worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2.One) -> [Vector2]
     {
-        let count = localVertices.count;
-        var ret: [Vector2] = [Vector2](count: count, repeatedValue: Vector2());
-        
-        for (i, lv) in enumerate(localVertices)
-        {
-            ret[i] = rotateVector(lv * localScale, angleInRadians) + worldPos;
-        }
-        
-        return ret;
+        return localVertices.map { rotateVector($0 * localScale, angleInRadians: angleInRadians) + worldPos }
     }
     
     /// Transforms the points on this closed shape into the given array of points.
     /// The array of points must have the same count of vertices as this closed shape
     /// transformation is applied in the following order:  scale -> rotation -> position.
-    func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2(1, 1))
+    public func transformVertices(inout target:[Vector2], worldPos: Vector2, angleInRadians: CGFloat, localScale: Vector2 = Vector2.One)
     {
-        let count = localVertices.count;
-		for (i, lv) in enumerate(localVertices)
-        {
-            target[i] = rotateVector(lv * localScale, angleInRadians) + worldPos;
-        }
+        target = transformVertices(worldPos, angleInRadians: angleInRadians, localScale: localScale)
     }
 }

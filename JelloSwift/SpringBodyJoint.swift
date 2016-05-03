@@ -9,51 +9,66 @@
 import Foundation
 import CoreGraphics
 
-class SpringBodyJoint : BodyJoint
+/// Represents a joint that links two joint links with spring forces
+public class SpringBodyJoint : BodyJoint
 {
     /// The spring coefficient for this spring body joint
-    var springK: CGFloat;
+    public var springK: CGFloat
     /// The spring dampness for this spring body joint
-    var springD: CGFloat;
+    public var springD: CGFloat
     
     /// Inits a new spring body joint witht he specified parameters. Leave the distance as -1 to calculate the distance automatically from the current distance of the two provided joint links
-    init(world: World, link1: JointLinkType, link2: JointLinkType, springK: CGFloat, springD: CGFloat, distance: CGFloat = -1)
+    public init(world: World, link1: JointLinkType, link2: JointLinkType, springK: CGFloat, springD: CGFloat, distance: CGFloat = -1)
     {
-        self.springK = springK;
-        self.springD = springD;
+        self.springK = springK
+        self.springD = springD
         
-        super.init(world: world, link1: link1, link2: link2, distance: distance);
+        super.init(world: world, link1: link1, link2: link2, distance: distance)
     }
     
     /**
      * Resolves this joint
      *
-     * :param: dt The delta time to update the resolve on
+     * - parameter dt: The delta time to update the resolve on
     */
-    override func resolve(dt: CGFloat)
+    public override func resolve(dt: CGFloat)
     {
-        let pos1 = _bodyLink1.getPosition();
-        let pos2 = _bodyLink2.getPosition();
-        
-        let force = calculateSpringForce(pos1, _bodyLink1.getVelocity(), pos2, _bodyLink2.getVelocity(), restDistance, springK, springD);
-        
-        let mass1 = _bodyLink1.getMass();
-        let mass2 = _bodyLink2.getMass();
-        let massSum = mass1 + mass2;
-        
-        if(!_bodyLink1.isStatic() && !_bodyLink2.isStatic())
+        if(!enabled)
         {
-            _bodyLink1.applyForce( force * (massSum / mass1));
-            _bodyLink2.applyForce(-force * (massSum / mass2));
+            return
+        }
+        
+        let pos1 = _bodyLink1.position
+        let pos2 = _bodyLink2.position
+        
+        let dist = pos1.distanceTo(pos2)
+        // Affordable distance
+        if(dist < maxRestDistance && dist > restDistance)
+        {
+            return
+        }
+        
+        let targetDist = max(restDistance, min(maxRestDistance, dist))
+        
+        let force = calculateSpringForce(pos1, velA: _bodyLink1.velocity, posB: pos2, velB: _bodyLink2.velocity, distance: targetDist, springK: springK, springD: springD)
+        
+        if(!_bodyLink1.isStatic && !_bodyLink2.isStatic)
+        {
+            let mass1 = _bodyLink1.mass
+            let mass2 = _bodyLink2.mass
+            let massSum = mass1 + mass2
+            
+            _bodyLink1.applyForce( force * (massSum / mass1))
+            _bodyLink2.applyForce(-force * (massSum / mass2))
         }
         // Static bodies:
-        else if(!_bodyLink1.isStatic() && _bodyLink2.isStatic())
+        else if(!_bodyLink1.isStatic && _bodyLink2.isStatic)
         {
-            _bodyLink1.applyForce(force);
+            _bodyLink1.applyForce(force)
         }
-        else if(!_bodyLink2.isStatic() && _bodyLink1.isStatic())
+        else if(!_bodyLink2.isStatic && _bodyLink1.isStatic)
         {
-            _bodyLink2.applyForce(-force);
+            _bodyLink2.applyForce(-force)
         }
     }
 }
