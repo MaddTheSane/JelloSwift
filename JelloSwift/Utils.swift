@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Luiz Fernando Silva. All rights reserved.
 //
 
-import UIKit
+#if os(OSX)
+    import AppKit
+#else
+    import UIKit
+#endif
 
 enum SequenceError: ErrorType
 {
@@ -158,8 +162,14 @@ extension RangeReplaceableCollectionType
     }
 }
 
-extension UIColor {
-    func flattenWithColor(foreColor: UIColor) -> UIColor {
+#if os(OSX)
+    typealias JColor = NSColor
+#else
+    typealias JColor = UIColor
+#endif
+
+extension JColor {
+    func flattenWithColor(foreColor: JColor) -> JColor {
         return flattenColors(self, withColor: foreColor)
     }
     
@@ -177,17 +187,17 @@ extension UIColor {
         return ret
     }
     
-    static func fromARGB(argb: Int32) -> UIColor {
+    static func fromARGB(argb: Int32) -> JColor {
         let blue = argb & 0xff;
         let green = argb >> 8 & 0xff;
         let red = argb >> 16 & 0xff;
         let alpha = argb >> 24 & 0xff;
         
-        return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
+        return JColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
     }
 }
 
-func flattenColors(backColor: UIColor, withColor foreColor: UIColor) -> UIColor {
+func flattenColors(backColor: JColor, withColor foreColor: JColor) -> JColor {
     // Based off an answer by an anonymous user on StackOverlow http://stackoverflow.com/questions/1718825/blend-formula-for-gdi/2223241#2223241
     var backR: CGFloat = 0, backG: CGFloat = 0, backB: CGFloat = 0, backA: CGFloat = 0
     
@@ -211,6 +221,6 @@ func flattenColors(backColor: UIColor, withColor foreColor: UIColor) -> UIColor 
     
     let alpha = backAlphaFloat + foreAlphaFloat - backAlphaFloat * foreAlphaNormalized
     
-    return UIColor(red: min(1, (foreR * foreAlphaFloat + backR * backColorMultiplier) / alpha), green: min(1, (foreG * foreAlphaFloat + backG * backColorMultiplier) / alpha), blue: min(1, (foreB * foreAlphaFloat + backB * backColorMultiplier) / alpha), alpha: alpha)
+    return JColor(red: min(1, (foreR * foreAlphaFloat + backR * backColorMultiplier) / alpha), green: min(1, (foreG * foreAlphaFloat + backG * backColorMultiplier) / alpha), blue: min(1, (foreB * foreAlphaFloat + backB * backColorMultiplier) / alpha), alpha: alpha)
     
 }

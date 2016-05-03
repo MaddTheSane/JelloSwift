@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Jello
 
 class AABBTests: XCTestCase {
     

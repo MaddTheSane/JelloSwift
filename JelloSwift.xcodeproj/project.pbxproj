@@ -67,6 +67,8 @@
 		55BDC6B41CD84CA50055B5B8 /* BodyEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027EE601AD1EF1900E849AC /* BodyEdge.swift */; };
 		55BDC6B91CD84CD90055B5B8 /* CollisionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */; };
 		55BDC6BA1CD84CDA0055B5B8 /* CollisionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0512D271AEA25AA00B0B87F /* CollisionObserver.swift */; };
+		55BDC6BF1CD854210055B5B8 /* AABBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06733531B4DA51E00E54020 /* AABBTests.swift */; };
+		55BDC6C01CD854210055B5B8 /* GeomUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF41AAA4B4500C03017 /* GeomUtilsTests.swift */; };
 		A03231251B4863CB00D725ED /* SpriteKitPolyDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E336061B2C4E4E00A2E8DC /* SpriteKitPolyDrawer.swift */; };
 		A0510AF51AAA4B4500C03017 /* GeomUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0510AF41AAA4B4500C03017 /* GeomUtilsTests.swift */; };
 		A06733541B4DA51E00E54020 /* AABBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06733531B4DA51E00E54020 /* AABBTests.swift */; };
@@ -761,7 +763,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BDC6C01CD854210055B5B8 /* GeomUtilsTests.swift in Sources */,
 				55BCAC201AAA696300F6D2E6 /* JelloSwiftTests.swift in Sources */,
+				55BDC6BF1CD854210055B5B8 /* AABBTests.swift in Sources */,
 				55BCAC221AAA696300F6D2E6 /* PointMassTests.swift in Sources */,
 				55BCAC211AAA696300F6D2E6 /* PhysicsMathTest.swift in Sources */,
 				55BCAC231AAA696300F6D2E6 /* ClosedShapeTests.swift in Sources */,

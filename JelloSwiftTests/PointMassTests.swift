@@ -12,14 +12,14 @@
     import Cocoa
 #endif
 import CoreGraphics
-import Jello
+@testable import Jello
 import XCTest
 
 class PointMassTests: XCTestCase
 {
     func testExample()
     {
-        var p = PointMass(mass: 0.2, position: Vector2(0, 0))
+        let p = PointMass(mass: 0.2, position: Vector2(0, 0))
         p.force += Vector2(1, 2)
         p.force += Vector2(1, 2)
         p.force += Vector2(1, 2)

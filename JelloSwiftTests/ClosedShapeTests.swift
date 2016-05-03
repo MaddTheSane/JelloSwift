@@ -11,7 +11,7 @@
     #elseif os(OSX)
     import Cocoa
 #endif
-import Jello
+@testable import Jello
 import XCTest
 
 class ClosedShapeTests: XCTestCase
@@ -29,7 +29,7 @@ class ClosedShapeTests: XCTestCase
         shape.finish(true)
         
         // Create the transformed shape with no modifications
-        var transformed = shape.transformVertices(Vector2.Zero, angleInRadians: 0, localScale: Vector2.One)
+        let transformed = shape.transformVertices(Vector2.Zero, angleInRadians: 0, localScale: Vector2.One)
         
         // Assert that both shapes are equal
 //        XCTAssertEqual(shape.localVertices[0] + Vector2.One, transformed[0], "The transformed shape is incorrect!")
@@ -73,7 +73,7 @@ class ClosedShapeTests: XCTestCase
         shape.finish(true)
         
         // Create the transformed shape with no modifications
-        var transformed = shape.transformVertices(Vector2.One, angleInRadians: PI, localScale: Vector2.One)
+        let transformed = shape.transformVertices(Vector2.One, angleInRadians: PI, localScale: Vector2.One)
         
         // Assert that both shapes are equal
         for i in 0..<shape.localVertices.count
