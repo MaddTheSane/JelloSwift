@@ -16,69 +16,69 @@ public struct Vector2: Equatable, CustomStringConvertible
     public static let Zero = Vector2(0, 0)
     /// A one-valued Vector2
     public static let One = Vector2(1, 1)
-	
-	#if arch(x86_64) || arch(arm64)
-	///Used to match `CGFloat`'s native type
-	typealias NativeVectorType = double2
-	#else
-	///Used to match `CGFloat`'s native type
-	typealias NativeVectorType = float2
-	#endif
-	var theVector: NativeVectorType
-	
-	public var X: CGFloat {
-		get {
-			return CGFloat(theVector.x)
-		}
-		set {
-			theVector.x = newValue.native
-		}
-	}
-	public var Y: CGFloat {
-		get {
-			return CGFloat(theVector.y)
-		}
-		set {
-			theVector.y = newValue.native
-		}
-	}
-		
+    
+    #if arch(x86_64) || arch(arm64)
+    ///Used to match `CGFloat`'s native type
+    typealias NativeVectorType = double2
+    #else
+    ///Used to match `CGFloat`'s native type
+    typealias NativeVectorType = float2
+    #endif
+    var theVector: NativeVectorType
+
+    public var X: CGFloat {
+        get {
+            return CGFloat(theVector.x)
+        }
+        set {
+            theVector.x = newValue.native
+        }
+    }
+    public var Y: CGFloat {
+        get {
+            return CGFloat(theVector.y)
+        }
+        set {
+            theVector.y = newValue.native
+        }
+    }
+    
     public var description: String { return toString() }
     
     public var cgPoint: CGPoint { return CGPoint(x: X, y: Y) }
-	
+    
 	init(_ vector: NativeVectorType) {
-		theVector = vector
+        theVector = vector
 	}
-	
+    
     public init()
     {
-		theVector = NativeVectorType(0)
+        theVector = NativeVectorType(0)
     }
     
     public init(_ x: Int, _ y: Int)
     {
-		theVector = NativeVectorType(CGFloat.NativeType(x), CGFloat.NativeType(y))
+        theVector = NativeVectorType(CGFloat.NativeType(x), CGFloat.NativeType(y))
     }
     
     public init(_ x:CGFloat, _ y:CGFloat)
     {
-		theVector = NativeVectorType(x.native, y.native)
+        theVector = NativeVectorType(x.native, y.native)
     }
     
     public init(_ x:Double, _ y:Double)
     {
-		theVector = NativeVectorType(CGFloat.NativeType(x), CGFloat.NativeType(y))
+        theVector = NativeVectorType(CGFloat.NativeType(x), CGFloat.NativeType(y))
     }
     
     public init(value: CGFloat)
     {
-		theVector = NativeVectorType(value.native)
+        theVector = NativeVectorType(value.native)
     }
     
     public init(_ point: CGPoint)
     {
-		theVector = NativeVectorType(point.x.native, point.y.native)
+        theVector = NativeVectorType(point.x.native, point.y.native)
     }
     
     /// Returns the angle in radians of this Vector2
@@ -99,21 +99,21 @@ public struct Vector2: Equatable, CustomStringConvertible
     @warn_unused_result
     public func magnitude() -> CGFloat
     {
-		return CGFloat(simd.length(theVector))
+        return CGFloat(simd.length(theVector))
     }
     
     /// Returns the distance between this Vector2 and another Vector2
     @warn_unused_result
     public func distanceTo(vec: Vector2) -> CGFloat
     {
-        return CGFloat(distance(self.theVector,vec.theVector))
+        return CGFloat(distance(self.theVector, vec.theVector))
     }
     
     /// Returns the distance squared between this Vector2 and another Vector2
     @warn_unused_result
     public func distanceToSquared(vec: Vector2) -> CGFloat
     {
-		return CGFloat(distance_squared(self.theVector,vec.theVector))
+        return CGFloat(distance_squared(self.theVector, vec.theVector))
     }
     
     /// Makes this Vector2 perpendicular to its current position.
@@ -183,7 +183,7 @@ public func min(a: Vector2, _ b: Vector2) -> Vector2
 @warn_unused_result
 public func max(a: Vector2, _ b: Vector2) -> Vector2
 {
-	return Vector2(max(a.theVector, b.theVector))
+    return Vector2(max(a.theVector, b.theVector))
 }
 
 /// Rotates a given vector by an angle in radians
@@ -292,25 +292,25 @@ public func =/(lhs: Vector2, rhs: Vector2) -> CGFloat
 @warn_unused_result
 public func +(lhs: Vector2, rhs: Vector2) -> Vector2
 {
-	return Vector2(lhs.theVector + rhs.theVector)
+    return Vector2(lhs.theVector + rhs.theVector)
 }
 
 @warn_unused_result
 public func -(lhs: Vector2, rhs: Vector2) -> Vector2
 {
-	return Vector2(lhs.theVector - rhs.theVector)
+    return Vector2(lhs.theVector - rhs.theVector)
 }
 
 @warn_unused_result
 public func *(lhs: Vector2, rhs: Vector2) -> Vector2
 {
-	return Vector2(lhs.theVector * rhs.theVector)
+    return Vector2(lhs.theVector * rhs.theVector)
 }
 
 @warn_unused_result
 public func /(lhs: Vector2, rhs: Vector2) -> Vector2
 {
-	return Vector2(lhs.theVector / rhs.theVector)
+    return Vector2(lhs.theVector / rhs.theVector)
 }
 
 @warn_unused_result
@@ -323,25 +323,25 @@ public func %(lhs: Vector2, rhs: Vector2) -> Vector2
 @warn_unused_result
 public func +(lhs: Vector2, rhs: CGFloat) -> Vector2
 {
-	return Vector2(lhs.theVector + Vector2.NativeVectorType(rhs.native))
+    return Vector2(lhs.theVector + Vector2.NativeVectorType(rhs.native))
 }
 
 @warn_unused_result
 public func -(lhs: Vector2, rhs: CGFloat) -> Vector2
 {
-	return Vector2(lhs.theVector - Vector2.NativeVectorType(rhs.native))
+    return Vector2(lhs.theVector - Vector2.NativeVectorType(rhs.native))
 }
 
 @warn_unused_result
 public func *(lhs: Vector2, rhs: CGFloat) -> Vector2
 {
-	return Vector2(lhs.theVector * rhs.native)
+    return Vector2(lhs.theVector * rhs.native)
 }
 
 @warn_unused_result
 public func /(lhs: Vector2, rhs: CGFloat) -> Vector2
 {
-	return Vector2(lhs.theVector / Vector2.NativeVectorType(rhs.native))
+    return Vector2(lhs.theVector / Vector2.NativeVectorType(rhs.native))
 }
 
 @warn_unused_result
@@ -398,19 +398,19 @@ public func /(lhs: Vector2, rhs: Int) -> Vector2
 ////
 public func +=(inout lhs: Vector2, rhs: Vector2)
 {
-	lhs.theVector += rhs.theVector
+    lhs.theVector += rhs.theVector
 }
 public func -=(inout lhs: Vector2, rhs: Vector2)
 {
-	lhs.theVector -= rhs.theVector
+    lhs.theVector -= rhs.theVector
 }
 public func *=(inout lhs: Vector2, rhs: Vector2)
 {
-	lhs.theVector *= rhs.theVector
+    lhs.theVector *= rhs.theVector
 }
 public func /=(inout lhs: Vector2, rhs: Vector2)
 {
-	lhs.theVector /= rhs.theVector
+    lhs.theVector /= rhs.theVector
 }
 
 // CGFloat interaction
@@ -461,10 +461,10 @@ public func ceil(x: Vector2) -> Vector2
 
 public func floor(x: Vector2) -> Vector2
 {
-	return Vector2(floor(x.theVector))
+    return Vector2(floor(x.theVector))
 }
 
 public func abs(x: Vector2) -> Vector2
 {
-	return Vector2(abs(x.theVector))
+    return Vector2(abs(x.theVector))
 }
