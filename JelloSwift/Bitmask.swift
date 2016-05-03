@@ -7,21 +7,20 @@
 //
 
 import CoreGraphics
-import Foundation
 
-public typealias Bitmask = UInt;
+public typealias Bitmask = UInt
 
 infix operator +& { associativity left precedence 140 }
 infix operator -& { associativity left precedence 140 }
 
 public func +&(inout lhs: Bitmask, rhs: Int) -> Bitmask
 {
-    lhs |= 1 << UInt(rhs > 0 ? rhs - 1 : 0);
-    return lhs;
+    lhs |= 1 << UInt(rhs > 0 ? rhs - 1 : 0)
+    return lhs
 }
 
 public func -&(inout lhs: Bitmask, rhs: Int) -> Bitmask
 {
-    lhs &= ~(1 << UInt(rhs > 0 ? rhs - 1 : 0));
-    return lhs;
+    lhs &= ~(1 << UInt(rhs > 0 ? rhs - 1 : 0))
+    return lhs
 }

@@ -30,9 +30,9 @@ class JelloSwiftTests: XCTestCase
     
     func testAABB()
     {
-        var aabb1 = AABB(min: Vector2(), max: Vector2(10, 10));
-        var aabb2 = AABB(min: Vector2(-1, -1), max: Vector2(0, 0));
-        var vec = Vector2(0, 0);
+        var aabb1 = AABB(min: Vector2.Zero, max: Vector2(10, 10))
+        var aabb2 = AABB(min: Vector2(-1, -1), max: Vector2(0, 0))
+        var vec = Vector2(0, 0)
         
         // This is an example of a functional test case.
         XCTAssert(aabb1.contains(vec), "Pass")
@@ -41,13 +41,13 @@ class JelloSwiftTests: XCTestCase
     
     func testBitmask()
     {
-        var b:Bitmask = 0;
+        var b:Bitmask = 0
         
-        b = b +& 1;
-        b = b +& 2;
+        b = b +& 1
+        b = b +& 2
         
-        b = b +& 3;
-        b = b -& 3;
+        b = b +& 3
+        b = b -& 3
         
         XCTAssert(b == 3, "Pass")
     }
@@ -57,14 +57,14 @@ class JelloSwiftTests: XCTestCase
         // This is an example of a performance test case.
         self.measureBlock() {
             // Put the code you want to measure the time of here.
-            var t: [CGFloat] = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+            var t: [CGFloat] = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
             
-            let c = t.count;
+            let c = t.count
             for i in 0..<100
             {
                 for i in 0..<c
                 {
-                    t[i] = 0;
+                    t[i] = 0
                 }
             }
         }
