@@ -17,8 +17,8 @@ class AABBTests: XCTestCase {
         
         let aabb = AABB(points: [point1, point2])
         
-        XCTAssert(aabb.minimum == Vector2(1, 2))
-        XCTAssert(aabb.maximum == Vector2(10, 20))
+        XCTAssertEqual(aabb.minimum, Vector2(1, 2))
+        XCTAssertEqual(aabb.maximum, Vector2(10, 20))
     }
     
     func testAABBWithPointsMixed() {
@@ -27,8 +27,8 @@ class AABBTests: XCTestCase {
         
         let aabb = AABB(points: [point1, point2])
         
-        XCTAssert(aabb.minimum == Vector2(1, 2))
-        XCTAssert(aabb.maximum == Vector2(10, 20))
+        XCTAssertEqual(aabb.minimum, Vector2(1, 2))
+        XCTAssertEqual(aabb.maximum, Vector2(10, 20))
     }
     
     func testAABBIntersection() {

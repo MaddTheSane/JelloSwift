@@ -175,7 +175,7 @@
 		A07D54701997E4EE003C9669 /* PointMassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointMassTests.swift; sourceTree = "<group>"; };
 		A081CFE11996B04D00C7CA49 /* PolyDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolyDrawer.swift; sourceTree = "<group>"; };
 		A08E5FA21AA8B56700F4CA0F /* ClosedShapeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedShapeTests.swift; sourceTree = "<group>"; };
-		A09CC4B41A251A880073BB62 /* JelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09CC4B41A251A880073BB62 /* JelloSwiftStress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JelloSwiftStress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09CC4B51A251A880073BB62 /* JelloSwiftStressTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JelloSwiftStressTest-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A0B015701AD1D57E00340465 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		A0C954E5199329130066F88F /* JelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,7 +376,7 @@
 			children = (
 				A0C954E5199329130066F88F /* JelloSwift.app */,
 				A0C954FB199329130066F88F /* JelloSwiftTests.xctest */,
-				A09CC4B41A251A880073BB62 /* JelloSwift.app */,
+				A09CC4B41A251A880073BB62 /* JelloSwiftStress.app */,
 				559F21F51AAA4E9D0067091D /* Jello.framework */,
 				55BCABE41AAA651E00F6D2E6 /* Jello.framework */,
 				55BCAC141AAA693200F6D2E6 /* Jello-OSXTests.xctest */,
@@ -551,7 +551,7 @@
 			);
 			name = JelloSwiftStressTest;
 			productName = JelloSwift;
-			productReference = A09CC4B41A251A880073BB62 /* JelloSwift.app */;
+			productReference = A09CC4B41A251A880073BB62 /* JelloSwiftStress.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A0C954E4199329130066F88F /* JelloSwift */ = {
@@ -1003,7 +1003,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwiftStress;
-				PRODUCT_NAME = JelloSwift;
+				PRODUCT_NAME = JelloSwiftStress;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1021,7 +1021,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luizfernandosilva.JelloSwiftStress;
-				PRODUCT_NAME = JelloSwift;
+				PRODUCT_NAME = JelloSwiftStress;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

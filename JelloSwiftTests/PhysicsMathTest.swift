@@ -35,8 +35,8 @@ class PhysicsMathTest: XCTestCase
         let dis = vec1.distanceTo(vec2)
         let dissq = vec1.distanceToSquared(vec2)
         let sss = sqrt((dx * dx) + (dy * dy))
-        XCTAssert(dis == sss, "Pass")
-        XCTAssert(dissq == (dx * dx) + (dy * dy), "Pass")
+        XCTAssertEqual(dis, sss, "Pass")
+        XCTAssertEqual(dissq, (dx * dx) + (dy * dy), "Pass")
     }
     
     func testVector2Math()
@@ -44,16 +44,16 @@ class PhysicsMathTest: XCTestCase
         let vec1 = Vector2(4, 6)
         let vec2 = Vector2(9, 7)
         
-        XCTAssert((vec1 =* vec2) == CGFloat(4 * 9 + 6 * 7), "DOT product test failed!")
-        XCTAssert((vec1 =/ vec2) == CGFloat(4 * 9 - 6 * 7), "CROSS product test failed!")
+        XCTAssertEqual((vec1 =* vec2), CGFloat(4 * 9 + 6 * 7), "DOT product test failed!")
+        XCTAssertEqual((vec1 =/ vec2), CGFloat(4 * 9 - 6 * 7), "CROSS product test failed!")
     }
     
     func testVector2Rotate()
     {
         let vec = Vector2(0, 1)
         
-//        XCTAssertEqual(rotateVector(vec, PI * 2), vec, "Vector rotation test failed!")
-//        XCTAssertEqual(rotateVector(vec, PI / 2), Vector2(-1,  0), "Vector rotation test failed!")
-//        XCTAssertEqual(rotateVector(vec, PI)    , Vector2( 0, -1), "Vector rotation test failed!")
+        XCTAssertEqual(rotateVector(vec, angleInRadians: PI * 2), vec, "Vector rotation test failed!")
+        //XCTAssertEqual(rotateVector(vec, angleInRadians: PI / 2), Vector2(-1,  0), "Vector rotation test failed!")
+        //XCTAssertEqual(rotateVector(vec, angleInRadians: PI)    , Vector2( 0, -1), "Vector rotation test failed!")
     }
 }
